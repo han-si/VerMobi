@@ -69,6 +69,9 @@
     <Compile Include="view\Vertraege.xaml.cs">
       <DependentUpon>Vertraege.xaml</DependentUpon>
     </Compile>
+    <Compile Include="view\Vertragsarten.xaml.cs">
+      <DependentUpon>Vertragsarten.xaml</DependentUpon>
+    </Compile>
     <Page Include="view\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\Vertraege.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Vertragsarten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
