@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="VerMobi.view.Verkaeufer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="730" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="380"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="VerkTextBoxVerkSuche" ToolTip="Bitte einen Verkäufer Namen(Firma) eingeben oder leer lassen um alle eingetragenen Verkäufer anzeigen zu lassen." HorizontalAlignment="Left" Height="24" TextWrapping="NoWrap" Text="Verkäufer Namen (Firma)" VerticalAlignment="Center" Width="150" Grid.Column="1" Margin="0,3" Grid.Row="1"/>
+        <Button x:Name="VerkButtonVerkSuchen" Content="suchen" ToolTip="Verkäufer Namen(Firma) suchen." HorizontalAlignment="Left" Margin="170,4,0,4" VerticalAlignment="Center" Width="60" Height="22" Grid.Column="1" Grid.Row="1"/>
+        <DataGrid x:Name="VerkDataGridVerkListe" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Verkaeufer}" SelectedItem="{Binding Path=Verkaeufer}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Verkäufer (Name 1)" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Verkäufer (Name 2)" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Strasse" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="PLZ" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Ort" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Land" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Ansprechpartner" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Tel.-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Internet" Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="VerkLabelUeberschrDataGridVertrTel" Content="Zum ausgewählten Verkäufer gehören:" HorizontalAlignment="Left" Margin="0,2" VerticalAlignment="Center" Width="220" Grid.Column="1" Grid.Row="3"/>
+        <DataGrid x:Name="VerkDataGridVertrTel" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Verkaeufer}" SelectedItem="{Binding Verkaeufer}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Verkäufer" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Tel.-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="SIM-Karte-Nr." Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="370" Grid.Row="5" VerticalAlignment="Top" Width="650" Margin="0,10,0,0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="220"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="VerkLabelVerkName1" Content="Verkäufer/Firma: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="VerkTextBoxVerkName1" Text=" " ToolTip="Verkäufer/Firma (Name 1) (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="0"/>
+            <Label x:Name="VerkLabelVerkName2" Content="Verkäufer/Firma:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="1"/>
+            <TextBox x:Name="VerkTextBoxVerkName2" Text=" " ToolTip="Verkäufer/Firma (Name 2)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="VerkLabelVerkStr" Content="Strasse und Nr.:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="2"/>
+            <TextBox x:Name="VerkTextBoxVerkStr" Text=" " ToolTip="Strasse und Hausnummer" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="2"/>
+            <Label x:Name="VerkLabelVerkPlz" Content="PLZ:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="3"/>
+            <TextBox x:Name="VerkTextBoxVerkPlz" Text=" " ToolTip="Postleitzahl" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="3"/>
+            <Label x:Name="VerkLabelVerkOrt" Content="Ort:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="4"/>
+            <TextBox x:Name="VerkTextBoxVerkOrt" Text=" " ToolTip="Ort" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="4"/>
+            <Label x:Name="VerkLabelVerkLand" Content="Land:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="5"/>
+            <TextBox x:Name="VerkTextBoxVerkLand" Text=" " ToolTip="Für Deutschland leer lassen, andere Länder bitte in Großbuchstaben ausgeschrieben, keine Länderkürzel ( z.B.: 'POLEN')" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="5"/>
+            <Label x:Name="VerkLabelVerkAnspr" Content="Ansprechpartner:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="6"/>
+            <TextBox x:Name="VerkTextBoxVerkAnspr" Text=" " ToolTip="Ansprechpartner" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="6"/>
+            <Label x:Name="VerkLabelVerkTelNr1" Content="Tel.-Nr.:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="7"/>
+            <TextBox x:Name="VerkTextBoxVerkTelNr1" Text=" " ToolTip="Telefonnummer (1)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="7"/>
+            <Label x:Name="VerkLabelVerkTelNr2" Content="Tel.-Nr.:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="8"/>
+            <TextBox x:Name="VerkTextBoxVerkTelNr2" Text=" " ToolTip="Telefonnummer (2)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="8"/>
+            <Label x:Name="VerkLabelVerkEmail1" Content="Email:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="0" />
+            <TextBox x:Name="VerkTextBoxVerkEmail1" Text=" " ToolTip="Email-Adresse (1)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="3" Grid.Row="0"/>
+            <Label x:Name="VerkLabelVerkEmail2" Content="Email:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="1" />
+            <TextBox x:Name="VerkTextBoxVerkEmail2" Text=" " ToolTip="Email-Adresse (2)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="3" Grid.Row="1"/>
+            <Label x:Name="VerkLabelVerkUrl" Content="Webseite:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="2" />
+            <TextBox x:Name="VerkTextBoxVerkUrl" Text=" " ToolTip="Internetadresse" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="3" Grid.Row="2"/>
+            <Label x:Name="VerkLabelVerkNotiz" Content="Notiz:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="3" />
+            <TextBox x:Name="VerkTextBoxVerkNotiz" Text=" " ToolTip="Hier kann alles notiert werden was in den anderen Formularfeldern keinen Platz findet." HorizontalAlignment="Left" Height="175" Margin="10,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.Row="3" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <Label x:Name="VerkLabelHinweisPflichtfelder" Content="* Pflichtfelder" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Row="8" Grid.Column="2"/>
+        </Grid>
+        <Label x:Name="VerkLabelAendern" Content="Änderungen:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="80" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="VerkButtonAendernSpeich" Content="speichern" ToolTip="Änderungen zum ausgewählten Verkäufer abspeichern." HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="VerkLabelFormZuruecksetzen" Content=",    Formular:" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="VerkButtonFormZuruecksetzen" Content="zurücksetzen" ToolTip="Formular zurücksetzen und damit die Auswahl aufheben." HorizontalAlignment="Left" Margin="245,0,0,0" VerticalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="VerkLabelNeuAnlegen" Content=",  oder neuen Verkäufer:" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="135" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="VerkButtonNeuAnlegen" Content="anlegen" ToolTip="Den Inhalt der Formularfelder als neuen Verkäufer speichern (Bitte vorher über die Suche prüfen ob nicht schon vorhanden)." HorizontalAlignment="Left" Margin="480,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="6"/>
+
+    </Grid>
+</UserControl>

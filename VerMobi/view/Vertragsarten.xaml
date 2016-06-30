@@ -53,17 +53,19 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="85"/>
                 <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="VertrArtLabelVertrArt" Content="Vertragsart: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="0"/>
+            <Label x:Name="VertrArtLabelVertrArt" Content="Vertragsart: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="80" Grid.Column="0" Grid.Row="0"/>
             <TextBox x:Name="VertrArtTextBoxVertrArt" Text=" " ToolTip="Vertragsart. (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="0"/>
             <Label x:Name="VertrArtLabelBeschr" Content="Beschreibung:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="1"/>
-            <TextBox x:Name="VertrArtTextBoxBeschr" Text=" " ToolTip="Notizen und Beschreiung der Vertragsart (kein Pflichtfeld)." HorizontalAlignment="Left" Height="175" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <TextBox x:Name="VertrArtTextBoxBeschr" Text=" " ToolTip="Notizen und Beschreibung der Vertragsart (kein Pflichtfeld)." HorizontalAlignment="Left" Height="175" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <Label x:Name="VertrArtHinweisPflichtfelder" Content="* Pflichtfeld" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2"/>
         </Grid>
         <Label x:Name="VertrArtLabelAendern" Content="Änderungen:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="80" Grid.Column="1" Grid.Row="6"/>
         <Button x:Name="VertrArtButtonAendernSpeich" Content="speichern" ToolTip="Änderungen zur ausgewählten Vertragsart abspeichern." HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="6"/>
         <Label x:Name="VertrArtLabelFormZuruecksetzen" Content=",    Formular:" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="75" Grid.Column="1" Grid.Row="6"/>
         <Button x:Name="VertrArtButtonFormZuruecksetzen" Content="zurücksetzen" ToolTip="Formular zurücksetzen und damit die Auswahl aufheben." HorizontalAlignment="Left" Margin="245,0,0,0" VerticalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="6"/>
-        <Label x:Name="VertrArtLabelNeuAnlegen" Content=",  oder neue Vertragsart:" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="140" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="VertrArtLabelNeuAnlegen" Content=",  oder neue Vertragsart" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="140" Grid.Column="1" Grid.Row="6"/>
         <Button x:Name="VertrArtButtonNeuAnlegen" Content="anlegen" ToolTip="Den Inhalt der Formularfelder als neue Vertragsart speichern (nur möglich wenn es die Vertragsart noch nicht gibt)." HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="6"/>
 
     </Grid>

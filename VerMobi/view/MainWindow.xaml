@@ -15,6 +15,34 @@
                     </Grid>
                 </ScrollViewer>
             </TabItem>
+            <TabItem Header="Abteilungen">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5">
+                        <view:Abteilungen HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Betriebssysteme">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5">
+                        <view:Betriebssysteme HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Fahrzeuge">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5">
+                        <view:Fahrzeuge HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Firmen">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5">
+                        <view:Firmen HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
             <TabItem Header="Verträge">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
@@ -32,58 +60,7 @@
             <TabItem Header="Verkäufer">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
-                        <TextBox x:Name="VerkTextBoxVerkSuche" Text="Verkäufer oder Vermittler" ToolTip="Bitte eine Namen der Verkäufer-/Vermittler-Firma eingeben." HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="150"/>
-                        <Button x:Name="VerkButtonVerkSuchen" Content="suchen" ToolTip="Veräufer / Vermittler suchen." HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Width="75"/>
-                        <ListView x:Name="VerkListViewVerk" HorizontalAlignment="Stretch" Height="155" Margin="10,45,10,0" VerticalAlignment="Top" Width="Auto">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn/>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                        <Label x:Name="VerkLabelUeberschrListeVerkVertrTel" Content="Vom ausgewählten Verkäufer vermittelte Verträge und Tel.-Nr." HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="344"/>
-                        <Button x:Name="VerkButtonVerkVertrTelAnzeigen" Content="anzeigen" ToolTip="Vom ausgewählten Verkäufer vermittelte Verträge und Tel.-Nr. anzeigen" HorizontalAlignment="Left" Margin="359,210,0,0" VerticalAlignment="Top" Width="75"/>
-                        <ListView x:Name="VerkListViewVerkVertrTel" HorizontalAlignment="Stretch" Height="100" Margin="10,242,10,0" VerticalAlignment="Top" Width="Auto">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn/>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                        <Label x:Name="VerkLabelVerkBearb" Content="Ausgewählten Verkäufer" HorizontalAlignment="Left" Margin="10,352,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="145"/>
-                        <Button x:Name="VerkButtonVerkBearbeiten" Content="bearbeiten" ToolTip="Ausgewählten Verkäufer bearbeiten." HorizontalAlignment="Left" Margin="156,354,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Label x:Name="VerkLabelVerkAendern" Content=",   Änderungen" HorizontalAlignment="Left" Margin="236,352,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="90"/>
-                        <Button x:Name="VerkButtonVerkAendernSpeich" Content="speichern" ToolTip="Änderungen zum ausgewählten Verkäufer abspeichern." HorizontalAlignment="Left" Margin="331,354,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Label x:Name="VerkLabelVerkName1" Content="Verkäufer (Firma) Name: *" HorizontalAlignment="Left" Margin="10,388,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="150"/>
-                        <TextBox x:Name="VerkTextBoxVerkName1" ToolTip="Verkäufer- o. Vermittler-Firmenname eingeben (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="175,390,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkName2" Content="Verkäufer (Firma) Name:" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="150"/>
-                        <TextBox x:Name="VerkTextBoxVerkName2" ToolTip="Verkäufer- o. Vermittler-Firmenname (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="175,428,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkStr" Content="Strasse + Nr.:" HorizontalAlignment="Left" Margin="10,464,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="150"/>
-                        <TextBox x:Name="VerkTextBoxVerkStr" ToolTip="Strasse und Hausnummer (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="175,466,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkLand" Content="Länderkürzel:" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="150"/>
-                        <TextBox x:Name="VerkTextBoxVerkLand" ToolTip="Länderkürzel z.B.: 'D' , 'A' ... usw. (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="175,504,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="35"/>
-                        <Label x:Name="VerkLabelVerkPlz" Content="PLZ:" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="150"/>
-                        <TextBox x:Name="VerkTextBoxVerkPlz" ToolTip="Postleitzahl (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="175,542,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="50"/>
-                        <Label x:Name="VerkLabelVerkOrt" Content="Ort:" HorizontalAlignment="Left" Margin="10,578,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="150"/>
-                        <TextBox x:Name="VerkTextBoxVerkOrt" ToolTip="Ort (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="175,580,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkAnspr" Content="Ansprechpartner:" HorizontalAlignment="Left" Margin="365,388,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="105"/>
-                        <TextBox x:Name="VerkTextBoxVerkAnspr" ToolTip="Ansprechpartner (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="480,390,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkTel1" Content="Tel.-Nr.:" HorizontalAlignment="Left" Margin="365,426,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="105"/>
-                        <TextBox x:Name="VerkTextBoxVerkTel1" ToolTip="Tel.-Nr. (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="480,428,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkTel2" Content="Tel.-Nr.:" HorizontalAlignment="Left" Margin="365,464,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="105"/>
-                        <TextBox x:Name="VerkTextBoxVerkTel2" ToolTip="Tel.-Nr. (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="480,466,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkEmail1" Content="Email:" HorizontalAlignment="Left" Margin="365,502,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="105"/>
-                        <TextBox x:Name="VerkTextBoxVerkEmail1" ToolTip="Email-Adresse (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="480,504,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkEmail2" Content="Email:" HorizontalAlignment="Left" Margin="365,540,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="105"/>
-                        <TextBox x:Name="VerkTextBoxVerkEmail2" ToolTip="Email-Adresse (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="480,542,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkWeb" Content="Internetadresse:" HorizontalAlignment="Left" Margin="365,584,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="105"/>
-                        <TextBox x:Name="VerkTextBoxVerkWeb" ToolTip="Internetadresse (kein Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="480,580,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="145"/>
-                        <Label x:Name="VerkLabelVerkNotiz" Content="Notiz:" HorizontalAlignment="Left" Margin="660,390,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="50"/>
-                        <Label x:Name="VerkLabelFormZuruecksetzen" Content="Formular" HorizontalAlignment="Left" Margin="10,619,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="60"/>
-                        <Button x:Name="VerkButtonFormZuruecksetzen" Content="zurücksetzen" ToolTip="Formular zurücksetzen und damit die Auswahl aufheben" HorizontalAlignment="Left" Margin="75,621,0,0" VerticalAlignment="Top" Width="90"/>
-                        <Label x:Name="VerkLabelNeuenVerkAnlegen" Content=",  oder neuen Verkäufer" HorizontalAlignment="Left" Margin="170,619,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.526" Width="140"/>
-                        <Button x:Name="VerkButtonNeuenVerkAnlegen" Content="anlegen" ToolTip="Den Inhalt der Formularfelder als neuen Verkäufer/Vermittler speichern (nur möglich wenn es den Verkäufer/Vermittler noch nicht gibt)." HorizontalAlignment="Left" Margin="315,621,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Label x:Name="VerkLabelHinweisPflichtfelder" Content="* Pflichtfelder" HorizontalAlignment="Left" Margin="660,619,0,0" VerticalAlignment="Top" Width="90"/>
+                        <view:Verkaeufer HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </ScrollViewer>
             </TabItem>

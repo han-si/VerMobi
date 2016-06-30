@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="VerMobi.view.Fahrzeuge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="330"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="FahrzTextBoxFahrzSuche" ToolTip="Bitte ein vorhandenes Fahrzeugkennzeichen eingeben oder leer lassen um alle bisher gespeicherten Fahrzeugkennzeichen anzeigen zu lassen." HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="NoWrap" Text="Kennzeichen" VerticalAlignment="Center" Width="150" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="FahrzButtonFahrzSuchen" Content="suchen" ToolTip="Fahrzeugkennzeichen suchen." HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="1"/>
+        <DataGrid x:Name="FahrzDataGridFahrzListe" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Fahrzeuge}" SelectedItem="{Binding Path=Fahrzeuge}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kennzeichen" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Modell" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Notiz" Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="FahrzLabelUeberschrDataGridFahrzAbtGeraetTel" Content="Zum ausgewählten Fahrzeuge gehören:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="225" Grid.Column="1" Grid.Row="3"/>
+        <DataGrid x:Name="FahrzDataGridFahrzAbtGeraetTel" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Fahrzeuge}" SelectedItem="{Binding Path=Fahrzeuge}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kennzeichen" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Modell" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Abteilung" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Firma" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Gerät" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="SIM-Karte" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Tel.-Nr." Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="310" Grid.Row="5" VerticalAlignment="Top" Width="Auto" Margin="0,10,10,10" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="FahrzLabelFahrzKennz" Content="Kennzeichen: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="100" Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="FahrzTextBoxFahrzKennz" Text=" " ToolTip="Fahrzeuge Kennzeichen (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="0"/>
+            <Label x:Name="FahrzLabelFahrzModell" Content="Fahrzeug-Modell:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="1"/>
+            <TextBox x:Name="FahrzTextBoxFahrzModell" Text=" " ToolTip="Fahrzeug-Modell" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="FahrzLabelFahrzAbt" Content="Abteilung:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="80" Grid.Column="0" Grid.Row="2"/>
+            <ComboBox x:Name="FahrzComboBoxFahrzAbt" IsEditable="True" IsReadOnly="True" Text=" " ToolTip="Bitte zugehörige Abteilung auswählen. Wenn noch nicht vorhanden, dann bitte im Formular 'Abteilungen' neu anlegen." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="2"/>
+            <Label x:Name="FahrzLabelFahrzNotiz" Content="Notiz:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="3"/>
+            <TextBox x:Name="FahrzTextBoxFahrzNotiz" Text=" " ToolTip="Notizen, Hinweise und Beschreibung zum Fahrzeug (kein Pflichtfeld)." HorizontalAlignment="Left" Height="175" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.Row="3" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <Label x:Name="FahrzLabelHinweisPflichtfeld" Content="* Pflichtfeld" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="0"/>
+        </Grid>
+        <Label x:Name="FahrzLabelFahrzAendern" Content="Änderungen:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="80" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="FahrzButtonFahrzAendernSpeich" Content="speichern" ToolTip="Änderungen zum ausgewählten Fahrzeug abspeichern." HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="FahrzLabelFormFahrzZuruecksetzen" Content=",    Formular" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="FahrzButtonFormFahrzZuruecksetzen" Content="zurücksetzen" ToolTip="Formular zurücksetzen und damit die Auswahl aufheben." HorizontalAlignment="Left" Margin="245,0,0,0" VerticalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="FahrzLabelFahrzNeuAnlegen" Content=",  oder neues Fahrzeug" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="140" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="FahrzButtonFahrzNeuAnlegen" Content="anlegen" ToolTip="Den Inhalt der Formularfelder als neues Fahrzeug speichern. (Bitte vorher über die Suche prüfen ob schon vorhanden)." HorizontalAlignment="Left" Margin="475,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="6"/>
+
+    </Grid>
+</UserControl>
