@@ -43,6 +43,85 @@
                     </Grid>
                 </ScrollViewer>
             </TabItem>
+            <TabItem Header="Geraete">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5">
+                        <view:Geraete HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Gerätehersteller">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Gerätemodelle">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Gerätetypen">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Funknetze">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Nutzer">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Provider">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="SIM-Größen">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="SIM-Karten">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="SIM-Nutzung">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Tarife">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Tarif-Optionen">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Tel.-Nummern">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Verbrauch">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Verkäufer">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid Background="#FFE5E5E5">
+                        <view:Verkaeufer HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
             <TabItem Header="Verträge">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
@@ -55,53 +134,6 @@
                     <Grid Background="#FFE5E5E5">
                         <view:Vertragsarten HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
                     </Grid>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Verkäufer">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5">
-                        <view:Verkaeufer HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
-                    </Grid>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Tel.-Nr.">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="SIM-Karten">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Nutzer">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Geräte">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Fahrzeuge">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Firmen">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Provider">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
-                </ScrollViewer>
-            </TabItem>
-            <TabItem Header="Verbrauch">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
                 </ScrollViewer>
             </TabItem>
         </TabControl>
