@@ -87,6 +87,33 @@
     <Compile Include="view\Geraete.xaml.cs">
       <DependentUpon>Geraete.xaml</DependentUpon>
     </Compile>
+    <Compile Include="view\Geraetehersteller.xaml.cs">
+      <DependentUpon>Geraetehersteller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Geraetemodelle.xaml.cs">
+      <DependentUpon>Geraetemodelle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Geraetetypen.xaml.cs">
+      <DependentUpon>Geraetetypen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Netze.xaml.cs">
+      <DependentUpon>Netze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Nutzer.xaml.cs">
+      <DependentUpon>Nutzer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Provider.xaml.cs">
+      <DependentUpon>Provider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Simgroessen.xaml.cs">
+      <DependentUpon>Simgroessen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Simkarten.xaml.cs">
+      <DependentUpon>Simkarten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Simnutzungen.xaml.cs">
+      <DependentUpon>Simnutzungen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="view\Uebersicht.xaml.cs">
       <DependentUpon>Uebersicht.xaml</DependentUpon>
     </Compile>
@@ -119,6 +146,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="view\Geraetehersteller.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Geraetemodelle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Geraetetypen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="view\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,6 +172,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="view\Netze.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Nutzer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Provider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Simgroessen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Simkarten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Simnutzungen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="view\Uebersicht.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

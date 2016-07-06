@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="VerMobi.view.Nutzer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="330"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="NutzerTextBoxNutzerSuche" ToolTip="Bitte einen vorhandenen Nutzer(in) eingeben oder leer lassen um alle bisher gespeicherten Nutzer anzeigen zu lassen." HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="NoWrap" Text="Nutzer" VerticalAlignment="Center" Width="150" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="NutzerButtonNutzerSuchen" Content="suchen" ToolTip="Nutzer(in) suchen" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="1"/>
+        <DataGrid x:Name="NutzerDataGridNutzerListe" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Nutzer}" SelectedItem="{Binding Path=Nutzer}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Nachname" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Abteilung" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Notiz" Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="NutzerLabelUeberschrDataGridSimTel" Content="Zum ausgewählten Nutzer gehören:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="225" Grid.Column="1" Grid.Row="3"/>
+        <DataGrid x:Name="NutzerDataGridNutzerSimTel" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Nutzer}" SelectedItem="{Binding Path=Nutzer}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nutzer" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="SIM-Karte-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Tel.-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Gerät" Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="310" Grid.Row="5" VerticalAlignment="Top" Width="Auto" Margin="0,10,10,10" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="NutzerLabelVorname" Content="Vorname: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="80" Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="NutzerTextBoxNutzerVorname" Text=" " ToolTip="Vorname (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="0"/>
+            <Label x:Name="NutzerLabelNachname" Content="Nachname: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="80" Grid.Column="0" Grid.Row="1"/>
+            <TextBox x:Name="NutzerTextBoxNutzerNachname" Text=" " ToolTip="Nachname (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="NutzerLabelAbt" Content="Abteilung: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="80" Grid.Column="0" Grid.Row="2"/>
+            <ComboBox x:Name="NutzerComboBoxNutzerAbt" IsEditable="True" IsReadOnly="True" Text=" " ToolTip="Bitte zugehörige Abteilung auswählen. Wenn noch nicht vorhanden, dann bitte im entsprechenden Formular neu anlegen (Pflichtfeld)." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="2"/>
+            <Label x:Name="NutzerLabelNotiz" Content="Notiz:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="3"/>
+            <TextBox x:Name="NutzerTextBoxNotiz" Text=" " ToolTip="Notizen, Hinweise und Beschreibung zum Nutzer (kein Pflichtfeld)." HorizontalAlignment="Left" Height="175" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.Row="3" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <Label x:Name="NutzerLabelHinweisPflichtfeld" Content="* Pflichtfelder" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="0"/>
+        </Grid>
+        <Label x:Name="NutzerLabelNutzerAendern" Content="Änderungen:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="80" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="NutzerButtonNutzerAendernSpeich" Content="speichern" ToolTip="Änderungen zum ausgewählten Nutzer abspeichern." HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="NutzerLabelFormNutzerZuruecksetzen" Content=",    Formular:" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="NutzerButtonFormNutzerZuruecksetzen" Content="zurücksetzen" ToolTip="Formular zurücksetzen und damit die Auswahl aufheben." HorizontalAlignment="Left" Margin="245,0,0,0" VerticalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="NutzerLabelNutzerNeuAnlegen" Content=",  oder neuen Nutzer" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="120" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="NutzerButtonNutzerNeuAnlegen" Content="anlegen" ToolTip="Den Inhalt der Formularfelder als neuen Nutzer speichern. (Bitte vorher über die Suche prüfen ob dieser schon vorhanden ist)." HorizontalAlignment="Left" Margin="465,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="6"/>
+
+    </Grid>
+</UserControl>

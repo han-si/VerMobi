@@ -88,7 +88,7 @@
             <Label x:Name="FirmLabelFirmUrl" Content="Webseite:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="2" />
             <TextBox x:Name="FirmTextBoxFirmUrl" Text=" " ToolTip="Internetadresse" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Column="3" Grid.Row="2"/>
             <Label x:Name="FirmLabelFirmNotiz" Content="Notiz:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="3" />
-            <TextBox x:Name="FirmTextBoxFirmNotiz" Text=" " ToolTip="Hier kann alles notiert werden was in den anderen Formularfeldern keinen Platz findet." HorizontalAlignment="Left" Height="175" Margin="10,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.Row="3" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <TextBox x:Name="FirmTextBoxFirmNotiz" Text=" " ToolTip="Hier kann alles notiert werden was in den anderen Formularfeldern keinen Platz findet." HorizontalAlignment="Left" Height="Auto" Margin="10,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="3" Grid.Row="3" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
             <Label x:Name="FirmLabelHinweisPflichtfelder" Content="* Pflichtfelder" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Row="8" Grid.Column="2"/>
         </Grid>
         <Label x:Name="FirmLabelAendern" Content="Änderungen:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="80" Grid.Column="1" Grid.Row="6"/>

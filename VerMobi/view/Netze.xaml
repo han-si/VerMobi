@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="VerMobi.view.Netze"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="899*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="NetzTextBoxSuche" ToolTip="Bitte ein vorhandenes Netz eingeben oder leer lassen um alle Netze anzeigen zu lassen." HorizontalAlignment="Left" Height="23" Margin="0,0,0,0" TextWrapping="NoWrap" Text="Netz" VerticalAlignment="Center" Width="150" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="NetzButtonSuchen" Content="suchen" ToolTip="Netz suchen." HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="1"/>
+        <DataGrid x:Name="NetzDataGridNetzListe" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Netze}" SelectedItem="{Binding Path=Netze}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Netz" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Beschreibung" Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="NetzLabelUeberschrDataGridTypNutzer" Content="Zum ausgewählten Netz gehören:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="225" Grid.Column="1" Grid.Row="3"/>
+        <DataGrid x:Name="NetzDataGridSimNutzer" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Netze}" SelectedItem="{Binding Path=Netze}" Height="56" Width="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Netz" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Tel.-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="SIM-Karte-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Nutzer" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Fahrzeug" Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Gerät" Binding="{Binding ''}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="230" Grid.Row="5" VerticalAlignment="Top" Width="Auto" Margin="0,10,10,10" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="NetzLabelNetz" Content="Netz: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="80" Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="NetzTextBoxNetz" Text=" " ToolTip="Netz (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="0"/>
+            <Label x:Name="NetzLabelBeschr" Content="Beschreibung:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="85" Grid.Column="0" Grid.Row="1"/>
+            <TextBox x:Name="NetzTextBoxBeschr" Text=" " ToolTip="Notizen und Beschreibung zum Netz (kein Pflichtfeld)." HorizontalAlignment="Left" Height="175" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" VerticalScrollBarVisibility="Auto" />
+            <Label x:Name="NetzHinweisPflichtfelder" Content="* Pflichtfeld" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="120" Grid.Column="2" Grid.Row="0"/>
+        </Grid>
+        <Label x:Name="NetzLabelAendern" Content="Änderungen:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="80" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="NetzButtonAendernSpeich" Content="speichern" ToolTip="Änderungen zum ausgewählten Netz abspeichern." HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="NetzLabelFormZuruecksetzen" Content=",    Formular:" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="75" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="NetzButtonFormZuruecksetzen" Content="zurücksetzen" ToolTip="Formular zurücksetzen und damit die Auswahl aufheben." HorizontalAlignment="Left" Margin="245,0,0,0" VerticalAlignment="Center" Width="90" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="NetzLabelNeuAnlegen" Content=",  oder neues Netz" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.526" Width="110" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Name="NetzButtonNeuAnlegen" Content="anlegen" ToolTip="Den Inhalt der Formularfelder als neues Netz speichern (Bitte vorher über die Suche prüfen ob es dieses schon gibt)." HorizontalAlignment="Left" Margin="450,0,0,0" VerticalAlignment="Center" Width="70" Grid.Column="1" Grid.Row="6"/>
+
+    </Grid>
+</UserControl>
