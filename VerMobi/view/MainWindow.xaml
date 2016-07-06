@@ -115,17 +115,23 @@
             </TabItem>
             <TabItem Header="Tarife">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <view:Tarife HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Tarif-Optionen">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <view:Tarifoptionen HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Tel.-Nummern">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <view:Telefonnummern HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Verbrauch">
