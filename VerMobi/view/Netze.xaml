@@ -1,9 +1,9 @@
 ﻿<UserControl x:Class="VerMobi.view.Netze"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="600" d:DesignWidth="700">
     <Grid>
         <Grid.RowDefinitions>
@@ -29,8 +29,8 @@
                 <DataGridTextColumn Header="Beschreibung" Binding="{Binding ''}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="NetzLabelUeberschrDataGridTypNutzer" Content="Zum ausgewählten Netz gehören:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="225" Grid.Column="1" Grid.Row="3"/>
-        <DataGrid x:Name="NetzDataGridSimNutzer" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Netze}" SelectedItem="{Binding Path=Netze}" Height="56" Width="Auto">
+        <Label x:Name="NetzLabelUeberschrDataGridVertrNutzer" Content="Zum ausgewählten Netz gehören:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="225" Grid.Column="1" Grid.Row="3"/>
+        <DataGrid x:Name="NetzDataGridVertrNutzer" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Netze}" SelectedItem="{Binding Path=Netze}" Height="56" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Netz" Binding="{Binding ''}"/>
                 <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}"/>

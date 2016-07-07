@@ -1,0 +1,1716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VerMobiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="VerMobiModelStoreContainer">
+          <EntitySet Name="abteilungen" EntityType="VerMobiModel.Store.abteilungen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="betriebssysteme" EntityType="VerMobiModel.Store.betriebssysteme" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="fahrzeuge" EntityType="VerMobiModel.Store.fahrzeuge" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="firmen" EntityType="VerMobiModel.Store.firmen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="geraete" EntityType="VerMobiModel.Store.geraete" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="geraetehersteller" EntityType="VerMobiModel.Store.geraetehersteller" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="geraetemodelle" EntityType="VerMobiModel.Store.geraetemodelle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="geraetetypen" EntityType="VerMobiModel.Store.geraetetypen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="netze" EntityType="VerMobiModel.Store.netze" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="nutzer" EntityType="VerMobiModel.Store.nutzer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="provider" EntityType="VerMobiModel.Store.provider" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="simgroessen" EntityType="VerMobiModel.Store.simgroessen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="simkarten" EntityType="VerMobiModel.Store.simkarten" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="simnutzung" EntityType="VerMobiModel.Store.simnutzung" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="VerMobiModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tarife" EntityType="VerMobiModel.Store.tarife" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tarifoptionen" EntityType="VerMobiModel.Store.tarifoptionen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="telefonnummern" EntityType="VerMobiModel.Store.telefonnummern" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="verbrauch" EntityType="VerMobiModel.Store.verbrauch" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="verkaeufer" EntityType="VerMobiModel.Store.verkaeufer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vertraege" EntityType="VerMobiModel.Store.vertraege" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vertragsarten" EntityType="VerMobiModel.Store.vertragsarten" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_abteilungen_firmen" Association="VerMobiModel.Store.FK_abteilungen_firmen">
+            <End Role="firmen" EntitySet="firmen" />
+            <End Role="abteilungen" EntitySet="abteilungen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fahrzeuge_abteilungen" Association="VerMobiModel.Store.FK_fahrzeuge_abteilungen">
+            <End Role="abteilungen" EntitySet="abteilungen" />
+            <End Role="fahrzeuge" EntitySet="fahrzeuge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_betriebssysteme" Association="VerMobiModel.Store.FK_geraete_betriebssysteme">
+            <End Role="betriebssysteme" EntitySet="betriebssysteme" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_geraetehersteller" Association="VerMobiModel.Store.FK_geraete_geraetehersteller">
+            <End Role="geraetehersteller" EntitySet="geraetehersteller" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_geraetemodelle" Association="VerMobiModel.Store.FK_geraete_geraetemodelle">
+            <End Role="geraetemodelle" EntitySet="geraetemodelle" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_geraetetypen" Association="VerMobiModel.Store.FK_geraete_geraetetypen">
+            <End Role="geraetetypen" EntitySet="geraetetypen" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_simgroessen" Association="VerMobiModel.Store.FK_geraete_simgroessen">
+            <End Role="simgroessen" EntitySet="simgroessen" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nutzer_abteilungen" Association="VerMobiModel.Store.FK_nutzer_abteilungen">
+            <End Role="abteilungen" EntitySet="abteilungen" />
+            <End Role="nutzer" EntitySet="nutzer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simkarten_simgroessen1" Association="VerMobiModel.Store.FK_simkarten_simgroessen1">
+            <End Role="simgroessen" EntitySet="simgroessen" />
+            <End Role="simkarten" EntitySet="simkarten" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simkarten_telefonnummern" Association="VerMobiModel.Store.FK_simkarten_telefonnummern">
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+            <End Role="simkarten" EntitySet="simkarten" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_fahrzeuge" Association="VerMobiModel.Store.FK_simnutzung_fahrzeuge">
+            <End Role="fahrzeuge" EntitySet="fahrzeuge" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_geraete" Association="VerMobiModel.Store.FK_simnutzung_geraete">
+            <End Role="geraete" EntitySet="geraete" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_nutzer" Association="VerMobiModel.Store.FK_simnutzung_nutzer">
+            <End Role="nutzer" EntitySet="nutzer" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_simkarten" Association="VerMobiModel.Store.FK_simnutzung_simkarten">
+            <End Role="simkarten" EntitySet="simkarten" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_telefonnummern_netze" Association="VerMobiModel.Store.FK_telefonnummern_netze">
+            <End Role="netze" EntitySet="netze" />
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+          </AssociationSet>
+          <AssociationSet Name="FK_telefonnummern_vertraege" Association="VerMobiModel.Store.FK_telefonnummern_vertraege">
+            <End Role="vertraege" EntitySet="vertraege" />
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+          </AssociationSet>
+          <AssociationSet Name="FK_verbrauch_telefonnummern" Association="VerMobiModel.Store.FK_verbrauch_telefonnummern">
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+            <End Role="verbrauch" EntitySet="verbrauch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_provider" Association="VerMobiModel.Store.FK_vertraege_provider">
+            <End Role="provider" EntitySet="provider" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarife" Association="VerMobiModel.Store.FK_vertraege_tarife">
+            <End Role="tarife" EntitySet="tarife" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarifoptionen" Association="VerMobiModel.Store.FK_vertraege_tarifoptionen">
+            <End Role="tarifoptionen" EntitySet="tarifoptionen" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarifoptionen1" Association="VerMobiModel.Store.FK_vertraege_tarifoptionen1">
+            <End Role="tarifoptionen" EntitySet="tarifoptionen" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarifoptionen2" Association="VerMobiModel.Store.FK_vertraege_tarifoptionen2">
+            <End Role="tarifoptionen" EntitySet="tarifoptionen" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_verkaeufer" Association="VerMobiModel.Store.FK_vertraege_verkaeufer">
+            <End Role="verkaeufer" EntitySet="verkaeufer" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_vertragsarten" Association="VerMobiModel.Store.FK_vertraege_vertragsarten">
+            <End Role="vertragsarten" EntitySet="vertragsarten" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="abteilungen">
+          <Key>
+            <PropertyRef Name="abteilungID" />
+          </Key>
+          <Property Name="abteilungID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="abteilung" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="firmaID" Type="int" Nullable="false" />
+          <Property Name="abteilungbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="betriebssysteme">
+          <Key>
+            <PropertyRef Name="betriebssysID" />
+          </Key>
+          <Property Name="betriebssysID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="betriebssys" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="betriebssysbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="fahrzeuge">
+          <Key>
+            <PropertyRef Name="fahrzeugID" />
+          </Key>
+          <Property Name="fahrzeugID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fahrzeugkennzeichen" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="fahrzeugmodell" Type="varchar" MaxLength="50" />
+          <Property Name="abteilungID" Type="int" />
+          <Property Name="fahrzeugnotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="firmen">
+          <Key>
+            <PropertyRef Name="firmaID" />
+          </Key>
+          <Property Name="firmaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firmaname1" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="firmaname2" Type="varchar" MaxLength="30" />
+          <Property Name="strasse" Type="varchar" MaxLength="50" />
+          <Property Name="plz" Type="char" MaxLength="5" />
+          <Property Name="ort" Type="varchar" MaxLength="50" />
+          <Property Name="land" Type="varchar" MaxLength="50" />
+          <Property Name="ansprechpartner" Type="varchar" MaxLength="50" />
+          <Property Name="tel1" Type="varchar" MaxLength="15" />
+          <Property Name="tel2" Type="varchar" MaxLength="15" />
+          <Property Name="email1" Type="varchar" MaxLength="50" />
+          <Property Name="email2" Type="varchar" MaxLength="50" />
+          <Property Name="web" Type="varchar" MaxLength="50" />
+          <Property Name="firmanotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="geraete">
+          <Key>
+            <PropertyRef Name="geraeteID" />
+          </Key>
+          <Property Name="geraeteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="geraetenr" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="geraeteinventarnr" Type="varchar" MaxLength="50" />
+          <Property Name="geraeteimei" Type="varchar" MaxLength="50" />
+          <Property Name="geraetetypID" Type="int" Nullable="false" />
+          <Property Name="geraeteherstID" Type="int" />
+          <Property Name="geraetemodellID" Type="int" />
+          <Property Name="simgroesseID" Type="int" />
+          <Property Name="betriebssysID" Type="int" />
+          <Property Name="inbetriebnahme" Type="date" />
+          <Property Name="geraetenotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="geraetehersteller">
+          <Key>
+            <PropertyRef Name="geraeteherstID" />
+          </Key>
+          <Property Name="geraeteherstID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="geraeteherstname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="geraeteherstbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="geraetemodelle">
+          <Key>
+            <PropertyRef Name="geraetemodellID" />
+          </Key>
+          <Property Name="geraetemodellID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="geraetemodell" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="geraetemodellbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="geraetetypen">
+          <Key>
+            <PropertyRef Name="geraetetypID" />
+          </Key>
+          <Property Name="geraetetypID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="geraetetyp" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="geraetetypbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="netze">
+          <Key>
+            <PropertyRef Name="netzID" />
+          </Key>
+          <Property Name="netzID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="netzname" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="netzbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="nutzer">
+          <Key>
+            <PropertyRef Name="nutzerID" />
+          </Key>
+          <Property Name="nutzerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vorname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nachname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="abteilungID" Type="int" Nullable="false" />
+          <Property Name="nutzernotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="provider">
+          <Key>
+            <PropertyRef Name="providerID" />
+          </Key>
+          <Property Name="providerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="providername1" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="providername2" Type="varchar" MaxLength="30" />
+          <Property Name="strasse" Type="varchar" MaxLength="50" />
+          <Property Name="plz" Type="char" MaxLength="5" />
+          <Property Name="ort" Type="varchar" MaxLength="50" />
+          <Property Name="land" Type="varchar" MaxLength="50" />
+          <Property Name="ansprechpartner" Type="varchar" MaxLength="50" />
+          <Property Name="tel1" Type="varchar" MaxLength="15" />
+          <Property Name="tel2" Type="varchar" MaxLength="15" />
+          <Property Name="email1" Type="varchar" MaxLength="50" />
+          <Property Name="email2" Type="varchar" MaxLength="50" />
+          <Property Name="web" Type="varchar" MaxLength="50" />
+          <Property Name="providernotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="simgroessen">
+          <Key>
+            <PropertyRef Name="simgroesseID" />
+          </Key>
+          <Property Name="simgroesseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="simgroesse" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="simgroessebeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="simkarten">
+          <Key>
+            <PropertyRef Name="simkartenID" />
+          </Key>
+          <Property Name="simkartenID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="simkartennr" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="pin1" Type="varchar" MaxLength="10" />
+          <Property Name="puk1" Type="varchar" MaxLength="10" />
+          <Property Name="pin2" Type="varchar" MaxLength="10" />
+          <Property Name="puk2" Type="varchar" MaxLength="10" />
+          <Property Name="simgroesseID" Type="int" />
+          <Property Name="telnrID" Type="int" Nullable="false" />
+          <Property Name="simkartennotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="simnutzung">
+          <Key>
+            <PropertyRef Name="simnutzungID" />
+          </Key>
+          <Property Name="simnutzungID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="simkartenID" Type="int" Nullable="false" />
+          <Property Name="geraeteID" Type="int" />
+          <Property Name="nutzerID" Type="int" />
+          <Property Name="fahrzeugID" Type="int" />
+          <Property Name="simausgabe" Type="date" Nullable="false" />
+          <Property Name="simrueckgabe" Type="date" />
+          <Property Name="simnutzungnotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tarife">
+          <Key>
+            <PropertyRef Name="tarifID" />
+          </Key>
+          <Property Name="tarifID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tarifname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="tarifbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tarifoptionen">
+          <Key>
+            <PropertyRef Name="tarifoptionID" />
+          </Key>
+          <Property Name="tarifoptionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tarifoptionname" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="tarifoptionbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="telefonnummern">
+          <Key>
+            <PropertyRef Name="telnrID" />
+          </Key>
+          <Property Name="telnrID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="telnr" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="vertragID" Type="int" Nullable="false" />
+          <Property Name="netzID" Type="int" />
+          <Property Name="telnrnotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="verbrauch">
+          <Key>
+            <PropertyRef Name="verbrauchID" />
+          </Key>
+          <Property Name="verbrauchID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="telnrID" Type="int" Nullable="false" />
+          <Property Name="verbrauchbeginn" Type="date" Nullable="false" />
+          <Property Name="verbrauchende" Type="date" />
+          <Property Name="datenvolumeninkl" Type="decimal" />
+          <Property Name="datenverbrauch" Type="decimal" />
+          <Property Name="telefonieinkl" Type="time" />
+          <Property Name="telefonieverbrauch" Type="time" />
+          <Property Name="smsinkl" Type="decimal" />
+          <Property Name="smsverbrauch" Type="decimal" />
+          <Property Name="grundpreis" Type="smallmoney" />
+          <Property Name="rgbetrag" Type="smallmoney" />
+          <Property Name="verbrauchnotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="verkaeufer">
+          <Key>
+            <PropertyRef Name="verkaeuferID" />
+          </Key>
+          <Property Name="verkaeuferID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="verkaeufername1" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="verkaeufername2" Type="varchar" MaxLength="30" />
+          <Property Name="strasse" Type="varchar" MaxLength="50" />
+          <Property Name="plz" Type="char" MaxLength="5" />
+          <Property Name="ort" Type="varchar" MaxLength="50" />
+          <Property Name="land" Type="varchar" MaxLength="50" />
+          <Property Name="ansprechpartner" Type="varchar" MaxLength="50" />
+          <Property Name="tel1" Type="varchar" MaxLength="15" />
+          <Property Name="tel2" Type="varchar" MaxLength="15" />
+          <Property Name="email1" Type="varchar" MaxLength="50" />
+          <Property Name="email2" Type="varchar" MaxLength="50" />
+          <Property Name="web" Type="varchar" MaxLength="50" />
+          <Property Name="verkaeufernotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="vertraege">
+          <Key>
+            <PropertyRef Name="vertragID" />
+          </Key>
+          <Property Name="vertragID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vertragsnr" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="vertragsartID" Type="int" Nullable="false" />
+          <Property Name="verkaeuferID" Type="int" />
+          <Property Name="providerID" Type="int" Nullable="false" />
+          <Property Name="vertragsbeginn" Type="date" Nullable="false" />
+          <Property Name="kuendigungsfrist" Type="date" />
+          <Property Name="gekuendigtam" Type="date" />
+          <Property Name="gekuendigtzum" Type="date" />
+          <Property Name="vertragsende" Type="date" />
+          <Property Name="tarifID" Type="int" Nullable="false" />
+          <Property Name="datenvolumeninkl" Type="decimal" />
+          <Property Name="telefonieinkl" Type="time" />
+          <Property Name="smsinkl" Type="decimal" />
+          <Property Name="grundpreis" Type="smallmoney" />
+          <Property Name="tarifoptionID1" Type="int" />
+          <Property Name="tarifoptionID2" Type="int" />
+          <Property Name="tarifoptionID3" Type="int" />
+          <Property Name="vertragsnotiz" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="vertragsarten">
+          <Key>
+            <PropertyRef Name="vertragsartID" />
+          </Key>
+          <Property Name="vertragsartID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vertragsart" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="vertragsartbeschr" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <Association Name="FK_abteilungen_firmen">
+          <End Role="firmen" Type="VerMobiModel.Store.firmen" Multiplicity="1" />
+          <End Role="abteilungen" Type="VerMobiModel.Store.abteilungen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firmen">
+              <PropertyRef Name="firmaID" />
+            </Principal>
+            <Dependent Role="abteilungen">
+              <PropertyRef Name="firmaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fahrzeuge_abteilungen">
+          <End Role="abteilungen" Type="VerMobiModel.Store.abteilungen" Multiplicity="0..1" />
+          <End Role="fahrzeuge" Type="VerMobiModel.Store.fahrzeuge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abteilungen">
+              <PropertyRef Name="abteilungID" />
+            </Principal>
+            <Dependent Role="fahrzeuge">
+              <PropertyRef Name="abteilungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_betriebssysteme">
+          <End Role="betriebssysteme" Type="VerMobiModel.Store.betriebssysteme" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.Store.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="betriebssysteme">
+              <PropertyRef Name="betriebssysID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="betriebssysID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_geraetehersteller">
+          <End Role="geraetehersteller" Type="VerMobiModel.Store.geraetehersteller" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.Store.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraetehersteller">
+              <PropertyRef Name="geraeteherstID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="geraeteherstID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_geraetemodelle">
+          <End Role="geraetemodelle" Type="VerMobiModel.Store.geraetemodelle" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.Store.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraetemodelle">
+              <PropertyRef Name="geraetemodellID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="geraetemodellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_geraetetypen">
+          <End Role="geraetetypen" Type="VerMobiModel.Store.geraetetypen" Multiplicity="1" />
+          <End Role="geraete" Type="VerMobiModel.Store.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraetetypen">
+              <PropertyRef Name="geraetetypID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="geraetetypID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_simgroessen">
+          <End Role="simgroessen" Type="VerMobiModel.Store.simgroessen" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.Store.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="simgroessen">
+              <PropertyRef Name="simgroesseID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="simgroesseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nutzer_abteilungen">
+          <End Role="abteilungen" Type="VerMobiModel.Store.abteilungen" Multiplicity="1" />
+          <End Role="nutzer" Type="VerMobiModel.Store.nutzer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abteilungen">
+              <PropertyRef Name="abteilungID" />
+            </Principal>
+            <Dependent Role="nutzer">
+              <PropertyRef Name="abteilungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simkarten_simgroessen1">
+          <End Role="simgroessen" Type="VerMobiModel.Store.simgroessen" Multiplicity="0..1" />
+          <End Role="simkarten" Type="VerMobiModel.Store.simkarten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="simgroessen">
+              <PropertyRef Name="simgroesseID" />
+            </Principal>
+            <Dependent Role="simkarten">
+              <PropertyRef Name="simgroesseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simkarten_telefonnummern">
+          <End Role="telefonnummern" Type="VerMobiModel.Store.telefonnummern" Multiplicity="1" />
+          <End Role="simkarten" Type="VerMobiModel.Store.simkarten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefonnummern">
+              <PropertyRef Name="telnrID" />
+            </Principal>
+            <Dependent Role="simkarten">
+              <PropertyRef Name="telnrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_fahrzeuge">
+          <End Role="fahrzeuge" Type="VerMobiModel.Store.fahrzeuge" Multiplicity="0..1" />
+          <End Role="simnutzung" Type="VerMobiModel.Store.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fahrzeuge">
+              <PropertyRef Name="fahrzeugID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="fahrzeugID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_geraete">
+          <End Role="geraete" Type="VerMobiModel.Store.geraete" Multiplicity="0..1" />
+          <End Role="simnutzung" Type="VerMobiModel.Store.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraete">
+              <PropertyRef Name="geraeteID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="geraeteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_nutzer">
+          <End Role="nutzer" Type="VerMobiModel.Store.nutzer" Multiplicity="0..1" />
+          <End Role="simnutzung" Type="VerMobiModel.Store.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nutzer">
+              <PropertyRef Name="nutzerID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="nutzerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_simkarten">
+          <End Role="simkarten" Type="VerMobiModel.Store.simkarten" Multiplicity="1" />
+          <End Role="simnutzung" Type="VerMobiModel.Store.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="simkarten">
+              <PropertyRef Name="simkartenID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="simkartenID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_telefonnummern_netze">
+          <End Role="netze" Type="VerMobiModel.Store.netze" Multiplicity="0..1" />
+          <End Role="telefonnummern" Type="VerMobiModel.Store.telefonnummern" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="netze">
+              <PropertyRef Name="netzID" />
+            </Principal>
+            <Dependent Role="telefonnummern">
+              <PropertyRef Name="netzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_telefonnummern_vertraege">
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="1" />
+          <End Role="telefonnummern" Type="VerMobiModel.Store.telefonnummern" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vertraege">
+              <PropertyRef Name="vertragID" />
+            </Principal>
+            <Dependent Role="telefonnummern">
+              <PropertyRef Name="vertragID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_verbrauch_telefonnummern">
+          <End Role="telefonnummern" Type="VerMobiModel.Store.telefonnummern" Multiplicity="1" />
+          <End Role="verbrauch" Type="VerMobiModel.Store.verbrauch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefonnummern">
+              <PropertyRef Name="telnrID" />
+            </Principal>
+            <Dependent Role="verbrauch">
+              <PropertyRef Name="telnrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_provider">
+          <End Role="provider" Type="VerMobiModel.Store.provider" Multiplicity="1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="provider">
+              <PropertyRef Name="providerID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="providerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarife">
+          <End Role="tarife" Type="VerMobiModel.Store.tarife" Multiplicity="1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarife">
+              <PropertyRef Name="tarifID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarifoptionen">
+          <End Role="tarifoptionen" Type="VerMobiModel.Store.tarifoptionen" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifoptionen">
+              <PropertyRef Name="tarifoptionID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifoptionID1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarifoptionen1">
+          <End Role="tarifoptionen" Type="VerMobiModel.Store.tarifoptionen" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifoptionen">
+              <PropertyRef Name="tarifoptionID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifoptionID2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarifoptionen2">
+          <End Role="tarifoptionen" Type="VerMobiModel.Store.tarifoptionen" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifoptionen">
+              <PropertyRef Name="tarifoptionID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifoptionID3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_verkaeufer">
+          <End Role="verkaeufer" Type="VerMobiModel.Store.verkaeufer" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="verkaeufer">
+              <PropertyRef Name="verkaeuferID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="verkaeuferID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_vertragsarten">
+          <End Role="vertragsarten" Type="VerMobiModel.Store.vertragsarten" Multiplicity="1" />
+          <End Role="vertraege" Type="VerMobiModel.Store.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vertragsarten">
+              <PropertyRef Name="vertragsartID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="vertragsartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VerMobiModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VerMobiEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="abteilungen" EntityType="VerMobiModel.abteilungen" />
+          <EntitySet Name="betriebssysteme" EntityType="VerMobiModel.betriebssysteme" />
+          <EntitySet Name="fahrzeuge" EntityType="VerMobiModel.fahrzeuge" />
+          <EntitySet Name="firmen" EntityType="VerMobiModel.firmen" />
+          <EntitySet Name="geraete" EntityType="VerMobiModel.geraete" />
+          <EntitySet Name="geraetehersteller" EntityType="VerMobiModel.geraetehersteller" />
+          <EntitySet Name="geraetemodelle" EntityType="VerMobiModel.geraetemodelle" />
+          <EntitySet Name="geraetetypen" EntityType="VerMobiModel.geraetetypen" />
+          <EntitySet Name="netze" EntityType="VerMobiModel.netze" />
+          <EntitySet Name="nutzer" EntityType="VerMobiModel.nutzer" />
+          <EntitySet Name="provider" EntityType="VerMobiModel.provider" />
+          <EntitySet Name="simgroessen" EntityType="VerMobiModel.simgroessen" />
+          <EntitySet Name="simkarten" EntityType="VerMobiModel.simkarten" />
+          <EntitySet Name="simnutzung" EntityType="VerMobiModel.simnutzung" />
+          <EntitySet Name="sysdiagrams" EntityType="VerMobiModel.sysdiagrams" />
+          <EntitySet Name="tarife" EntityType="VerMobiModel.tarife" />
+          <EntitySet Name="tarifoptionen" EntityType="VerMobiModel.tarifoptionen" />
+          <EntitySet Name="telefonnummern" EntityType="VerMobiModel.telefonnummern" />
+          <EntitySet Name="verbrauch" EntityType="VerMobiModel.verbrauch" />
+          <EntitySet Name="verkaeufer" EntityType="VerMobiModel.verkaeufer" />
+          <EntitySet Name="vertraege" EntityType="VerMobiModel.vertraege" />
+          <EntitySet Name="vertragsarten" EntityType="VerMobiModel.vertragsarten" />
+          <AssociationSet Name="FK_abteilungen_firmen" Association="VerMobiModel.FK_abteilungen_firmen">
+            <End Role="firmen" EntitySet="firmen" />
+            <End Role="abteilungen" EntitySet="abteilungen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fahrzeuge_abteilungen" Association="VerMobiModel.FK_fahrzeuge_abteilungen">
+            <End Role="abteilungen" EntitySet="abteilungen" />
+            <End Role="fahrzeuge" EntitySet="fahrzeuge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nutzer_abteilungen" Association="VerMobiModel.FK_nutzer_abteilungen">
+            <End Role="abteilungen" EntitySet="abteilungen" />
+            <End Role="nutzer" EntitySet="nutzer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_betriebssysteme" Association="VerMobiModel.FK_geraete_betriebssysteme">
+            <End Role="betriebssysteme" EntitySet="betriebssysteme" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_fahrzeuge" Association="VerMobiModel.FK_simnutzung_fahrzeuge">
+            <End Role="fahrzeuge" EntitySet="fahrzeuge" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_geraetehersteller" Association="VerMobiModel.FK_geraete_geraetehersteller">
+            <End Role="geraetehersteller" EntitySet="geraetehersteller" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_geraetemodelle" Association="VerMobiModel.FK_geraete_geraetemodelle">
+            <End Role="geraetemodelle" EntitySet="geraetemodelle" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_geraetetypen" Association="VerMobiModel.FK_geraete_geraetetypen">
+            <End Role="geraetetypen" EntitySet="geraetetypen" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_geraete_simgroessen" Association="VerMobiModel.FK_geraete_simgroessen">
+            <End Role="simgroessen" EntitySet="simgroessen" />
+            <End Role="geraete" EntitySet="geraete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_geraete" Association="VerMobiModel.FK_simnutzung_geraete">
+            <End Role="geraete" EntitySet="geraete" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_telefonnummern_netze" Association="VerMobiModel.FK_telefonnummern_netze">
+            <End Role="netze" EntitySet="netze" />
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_nutzer" Association="VerMobiModel.FK_simnutzung_nutzer">
+            <End Role="nutzer" EntitySet="nutzer" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_provider" Association="VerMobiModel.FK_vertraege_provider">
+            <End Role="provider" EntitySet="provider" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simkarten_simgroessen1" Association="VerMobiModel.FK_simkarten_simgroessen1">
+            <End Role="simgroessen" EntitySet="simgroessen" />
+            <End Role="simkarten" EntitySet="simkarten" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simkarten_telefonnummern" Association="VerMobiModel.FK_simkarten_telefonnummern">
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+            <End Role="simkarten" EntitySet="simkarten" />
+          </AssociationSet>
+          <AssociationSet Name="FK_simnutzung_simkarten" Association="VerMobiModel.FK_simnutzung_simkarten">
+            <End Role="simkarten" EntitySet="simkarten" />
+            <End Role="simnutzung" EntitySet="simnutzung" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarife" Association="VerMobiModel.FK_vertraege_tarife">
+            <End Role="tarife" EntitySet="tarife" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarifoptionen" Association="VerMobiModel.FK_vertraege_tarifoptionen">
+            <End Role="tarifoptionen" EntitySet="tarifoptionen" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarifoptionen1" Association="VerMobiModel.FK_vertraege_tarifoptionen1">
+            <End Role="tarifoptionen" EntitySet="tarifoptionen" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_tarifoptionen2" Association="VerMobiModel.FK_vertraege_tarifoptionen2">
+            <End Role="tarifoptionen" EntitySet="tarifoptionen" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_telefonnummern_vertraege" Association="VerMobiModel.FK_telefonnummern_vertraege">
+            <End Role="vertraege" EntitySet="vertraege" />
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+          </AssociationSet>
+          <AssociationSet Name="FK_verbrauch_telefonnummern" Association="VerMobiModel.FK_verbrauch_telefonnummern">
+            <End Role="telefonnummern" EntitySet="telefonnummern" />
+            <End Role="verbrauch" EntitySet="verbrauch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_verkaeufer" Association="VerMobiModel.FK_vertraege_verkaeufer">
+            <End Role="verkaeufer" EntitySet="verkaeufer" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vertraege_vertragsarten" Association="VerMobiModel.FK_vertraege_vertragsarten">
+            <End Role="vertragsarten" EntitySet="vertragsarten" />
+            <End Role="vertraege" EntitySet="vertraege" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="abteilungen">
+          <Key>
+            <PropertyRef Name="abteilungID" />
+          </Key>
+          <Property Name="abteilungID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="abteilung" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="firmaID" Type="Int32" Nullable="false" />
+          <Property Name="abteilungbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="firmen" Relationship="VerMobiModel.FK_abteilungen_firmen" FromRole="abteilungen" ToRole="firmen" />
+          <NavigationProperty Name="fahrzeuge" Relationship="VerMobiModel.FK_fahrzeuge_abteilungen" FromRole="abteilungen" ToRole="fahrzeuge" />
+          <NavigationProperty Name="nutzer" Relationship="VerMobiModel.FK_nutzer_abteilungen" FromRole="abteilungen" ToRole="nutzer" />
+        </EntityType>
+        <EntityType Name="betriebssysteme">
+          <Key>
+            <PropertyRef Name="betriebssysID" />
+          </Key>
+          <Property Name="betriebssysID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="betriebssys" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="betriebssysbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="geraete" Relationship="VerMobiModel.FK_geraete_betriebssysteme" FromRole="betriebssysteme" ToRole="geraete" />
+        </EntityType>
+        <EntityType Name="fahrzeuge">
+          <Key>
+            <PropertyRef Name="fahrzeugID" />
+          </Key>
+          <Property Name="fahrzeugID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="fahrzeugkennzeichen" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="fahrzeugmodell" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="abteilungID" Type="Int32" />
+          <Property Name="fahrzeugnotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="abteilungen" Relationship="VerMobiModel.FK_fahrzeuge_abteilungen" FromRole="fahrzeuge" ToRole="abteilungen" />
+          <NavigationProperty Name="simnutzung" Relationship="VerMobiModel.FK_simnutzung_fahrzeuge" FromRole="fahrzeuge" ToRole="simnutzung" />
+        </EntityType>
+        <EntityType Name="firmen">
+          <Key>
+            <PropertyRef Name="firmaID" />
+          </Key>
+          <Property Name="firmaID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="firmaname1" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="firmaname2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="strasse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="plz" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="ort" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="land" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ansprechpartner" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tel1" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="tel2" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="email1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="web" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="firmanotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="abteilungen" Relationship="VerMobiModel.FK_abteilungen_firmen" FromRole="firmen" ToRole="abteilungen" />
+        </EntityType>
+        <EntityType Name="geraete">
+          <Key>
+            <PropertyRef Name="geraeteID" />
+          </Key>
+          <Property Name="geraeteID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="geraetenr" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="geraeteinventarnr" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="geraeteimei" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="geraetetypID" Type="Int32" Nullable="false" />
+          <Property Name="geraeteherstID" Type="Int32" />
+          <Property Name="geraetemodellID" Type="Int32" />
+          <Property Name="simgroesseID" Type="Int32" />
+          <Property Name="betriebssysID" Type="Int32" />
+          <Property Name="inbetriebnahme" Type="DateTime" Precision="0" />
+          <Property Name="geraetenotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="betriebssysteme" Relationship="VerMobiModel.FK_geraete_betriebssysteme" FromRole="geraete" ToRole="betriebssysteme" />
+          <NavigationProperty Name="geraetehersteller" Relationship="VerMobiModel.FK_geraete_geraetehersteller" FromRole="geraete" ToRole="geraetehersteller" />
+          <NavigationProperty Name="geraetemodelle" Relationship="VerMobiModel.FK_geraete_geraetemodelle" FromRole="geraete" ToRole="geraetemodelle" />
+          <NavigationProperty Name="geraetetypen" Relationship="VerMobiModel.FK_geraete_geraetetypen" FromRole="geraete" ToRole="geraetetypen" />
+          <NavigationProperty Name="simgroessen" Relationship="VerMobiModel.FK_geraete_simgroessen" FromRole="geraete" ToRole="simgroessen" />
+          <NavigationProperty Name="simnutzung" Relationship="VerMobiModel.FK_simnutzung_geraete" FromRole="geraete" ToRole="simnutzung" />
+        </EntityType>
+        <EntityType Name="geraetehersteller">
+          <Key>
+            <PropertyRef Name="geraeteherstID" />
+          </Key>
+          <Property Name="geraeteherstID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="geraeteherstname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="geraeteherstbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="geraete" Relationship="VerMobiModel.FK_geraete_geraetehersteller" FromRole="geraetehersteller" ToRole="geraete" />
+        </EntityType>
+        <EntityType Name="geraetemodelle">
+          <Key>
+            <PropertyRef Name="geraetemodellID" />
+          </Key>
+          <Property Name="geraetemodellID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="geraetemodell" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="geraetemodellbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="geraete" Relationship="VerMobiModel.FK_geraete_geraetemodelle" FromRole="geraetemodelle" ToRole="geraete" />
+        </EntityType>
+        <EntityType Name="geraetetypen">
+          <Key>
+            <PropertyRef Name="geraetetypID" />
+          </Key>
+          <Property Name="geraetetypID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="geraetetyp" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="geraetetypbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="geraete" Relationship="VerMobiModel.FK_geraete_geraetetypen" FromRole="geraetetypen" ToRole="geraete" />
+        </EntityType>
+        <EntityType Name="netze">
+          <Key>
+            <PropertyRef Name="netzID" />
+          </Key>
+          <Property Name="netzID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="netzname" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="netzbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="telefonnummern" Relationship="VerMobiModel.FK_telefonnummern_netze" FromRole="netze" ToRole="telefonnummern" />
+        </EntityType>
+        <EntityType Name="nutzer">
+          <Key>
+            <PropertyRef Name="nutzerID" />
+          </Key>
+          <Property Name="nutzerID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="vorname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nachname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="abteilungID" Type="Int32" Nullable="false" />
+          <Property Name="nutzernotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="abteilungen" Relationship="VerMobiModel.FK_nutzer_abteilungen" FromRole="nutzer" ToRole="abteilungen" />
+          <NavigationProperty Name="simnutzung" Relationship="VerMobiModel.FK_simnutzung_nutzer" FromRole="nutzer" ToRole="simnutzung" />
+        </EntityType>
+        <EntityType Name="provider">
+          <Key>
+            <PropertyRef Name="providerID" />
+          </Key>
+          <Property Name="providerID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="providername1" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="providername2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="strasse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="plz" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="ort" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="land" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ansprechpartner" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tel1" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="tel2" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="email1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="web" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="providernotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vertraege" Relationship="VerMobiModel.FK_vertraege_provider" FromRole="provider" ToRole="vertraege" />
+        </EntityType>
+        <EntityType Name="simgroessen">
+          <Key>
+            <PropertyRef Name="simgroesseID" />
+          </Key>
+          <Property Name="simgroesseID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="simgroesse" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="simgroessebeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="geraete" Relationship="VerMobiModel.FK_geraete_simgroessen" FromRole="simgroessen" ToRole="geraete" />
+          <NavigationProperty Name="simkarten" Relationship="VerMobiModel.FK_simkarten_simgroessen1" FromRole="simgroessen" ToRole="simkarten" />
+        </EntityType>
+        <EntityType Name="simkarten">
+          <Key>
+            <PropertyRef Name="simkartenID" />
+          </Key>
+          <Property Name="simkartenID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="simkartennr" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pin1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="puk1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="pin2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="puk2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="simgroesseID" Type="Int32" />
+          <Property Name="telnrID" Type="Int32" Nullable="false" />
+          <Property Name="simkartennotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="simgroessen" Relationship="VerMobiModel.FK_simkarten_simgroessen1" FromRole="simkarten" ToRole="simgroessen" />
+          <NavigationProperty Name="telefonnummern" Relationship="VerMobiModel.FK_simkarten_telefonnummern" FromRole="simkarten" ToRole="telefonnummern" />
+          <NavigationProperty Name="simnutzung" Relationship="VerMobiModel.FK_simnutzung_simkarten" FromRole="simkarten" ToRole="simnutzung" />
+        </EntityType>
+        <EntityType Name="simnutzung">
+          <Key>
+            <PropertyRef Name="simnutzungID" />
+          </Key>
+          <Property Name="simnutzungID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="simkartenID" Type="Int32" Nullable="false" />
+          <Property Name="geraeteID" Type="Int32" />
+          <Property Name="nutzerID" Type="Int32" />
+          <Property Name="fahrzeugID" Type="Int32" />
+          <Property Name="simausgabe" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="simrueckgabe" Type="DateTime" Precision="0" />
+          <Property Name="simnutzungnotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="fahrzeuge" Relationship="VerMobiModel.FK_simnutzung_fahrzeuge" FromRole="simnutzung" ToRole="fahrzeuge" />
+          <NavigationProperty Name="geraete" Relationship="VerMobiModel.FK_simnutzung_geraete" FromRole="simnutzung" ToRole="geraete" />
+          <NavigationProperty Name="nutzer" Relationship="VerMobiModel.FK_simnutzung_nutzer" FromRole="simnutzung" ToRole="nutzer" />
+          <NavigationProperty Name="simkarten" Relationship="VerMobiModel.FK_simnutzung_simkarten" FromRole="simnutzung" ToRole="simkarten" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tarife">
+          <Key>
+            <PropertyRef Name="tarifID" />
+          </Key>
+          <Property Name="tarifID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tarifname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tarifbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vertraege" Relationship="VerMobiModel.FK_vertraege_tarife" FromRole="tarife" ToRole="vertraege" />
+        </EntityType>
+        <EntityType Name="tarifoptionen">
+          <Key>
+            <PropertyRef Name="tarifoptionID" />
+          </Key>
+          <Property Name="tarifoptionID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tarifoptionname" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tarifoptionbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vertraege" Relationship="VerMobiModel.FK_vertraege_tarifoptionen" FromRole="tarifoptionen" ToRole="vertraege" />
+          <NavigationProperty Name="vertraege1" Relationship="VerMobiModel.FK_vertraege_tarifoptionen1" FromRole="tarifoptionen" ToRole="vertraege" />
+          <NavigationProperty Name="vertraege2" Relationship="VerMobiModel.FK_vertraege_tarifoptionen2" FromRole="tarifoptionen" ToRole="vertraege" />
+        </EntityType>
+        <EntityType Name="telefonnummern">
+          <Key>
+            <PropertyRef Name="telnrID" />
+          </Key>
+          <Property Name="telnrID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="telnr" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vertragID" Type="Int32" Nullable="false" />
+          <Property Name="netzID" Type="Int32" />
+          <Property Name="telnrnotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="netze" Relationship="VerMobiModel.FK_telefonnummern_netze" FromRole="telefonnummern" ToRole="netze" />
+          <NavigationProperty Name="simkarten" Relationship="VerMobiModel.FK_simkarten_telefonnummern" FromRole="telefonnummern" ToRole="simkarten" />
+          <NavigationProperty Name="vertraege" Relationship="VerMobiModel.FK_telefonnummern_vertraege" FromRole="telefonnummern" ToRole="vertraege" />
+          <NavigationProperty Name="verbrauch" Relationship="VerMobiModel.FK_verbrauch_telefonnummern" FromRole="telefonnummern" ToRole="verbrauch" />
+        </EntityType>
+        <EntityType Name="verbrauch">
+          <Key>
+            <PropertyRef Name="verbrauchID" />
+          </Key>
+          <Property Name="verbrauchID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="telnrID" Type="Int32" Nullable="false" />
+          <Property Name="verbrauchbeginn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="verbrauchende" Type="DateTime" Precision="0" />
+          <Property Name="datenvolumeninkl" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="datenverbrauch" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="telefonieinkl" Type="Time" Precision="7" />
+          <Property Name="telefonieverbrauch" Type="Time" Precision="7" />
+          <Property Name="smsinkl" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="smsverbrauch" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="grundpreis" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="rgbetrag" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="verbrauchnotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="telefonnummern" Relationship="VerMobiModel.FK_verbrauch_telefonnummern" FromRole="verbrauch" ToRole="telefonnummern" />
+        </EntityType>
+        <EntityType Name="verkaeufer">
+          <Key>
+            <PropertyRef Name="verkaeuferID" />
+          </Key>
+          <Property Name="verkaeuferID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="verkaeufername1" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="verkaeufername2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="strasse" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="plz" Type="String" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="ort" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="land" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ansprechpartner" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tel1" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="tel2" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="email1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="web" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="verkaeufernotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vertraege" Relationship="VerMobiModel.FK_vertraege_verkaeufer" FromRole="verkaeufer" ToRole="vertraege" />
+        </EntityType>
+        <EntityType Name="vertraege">
+          <Key>
+            <PropertyRef Name="vertragID" />
+          </Key>
+          <Property Name="vertragID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="vertragsnr" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vertragsartID" Type="Int32" Nullable="false" />
+          <Property Name="verkaeuferID" Type="Int32" />
+          <Property Name="providerID" Type="Int32" Nullable="false" />
+          <Property Name="vertragsbeginn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="kuendigungsfrist" Type="DateTime" Precision="0" />
+          <Property Name="gekuendigtam" Type="DateTime" Precision="0" />
+          <Property Name="gekuendigtzum" Type="DateTime" Precision="0" />
+          <Property Name="vertragsende" Type="DateTime" Precision="0" />
+          <Property Name="tarifID" Type="Int32" Nullable="false" />
+          <Property Name="datenvolumeninkl" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="telefonieinkl" Type="Time" Precision="7" />
+          <Property Name="smsinkl" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="grundpreis" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="tarifoptionID1" Type="Int32" />
+          <Property Name="tarifoptionID2" Type="Int32" />
+          <Property Name="tarifoptionID3" Type="Int32" />
+          <Property Name="vertragsnotiz" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="provider" Relationship="VerMobiModel.FK_vertraege_provider" FromRole="vertraege" ToRole="provider" />
+          <NavigationProperty Name="tarife" Relationship="VerMobiModel.FK_vertraege_tarife" FromRole="vertraege" ToRole="tarife" />
+          <NavigationProperty Name="tarifoptionen" Relationship="VerMobiModel.FK_vertraege_tarifoptionen" FromRole="vertraege" ToRole="tarifoptionen" />
+          <NavigationProperty Name="tarifoptionen1" Relationship="VerMobiModel.FK_vertraege_tarifoptionen1" FromRole="vertraege" ToRole="tarifoptionen" />
+          <NavigationProperty Name="tarifoptionen2" Relationship="VerMobiModel.FK_vertraege_tarifoptionen2" FromRole="vertraege" ToRole="tarifoptionen" />
+          <NavigationProperty Name="telefonnummern" Relationship="VerMobiModel.FK_telefonnummern_vertraege" FromRole="vertraege" ToRole="telefonnummern" />
+          <NavigationProperty Name="verkaeufer" Relationship="VerMobiModel.FK_vertraege_verkaeufer" FromRole="vertraege" ToRole="verkaeufer" />
+          <NavigationProperty Name="vertragsarten" Relationship="VerMobiModel.FK_vertraege_vertragsarten" FromRole="vertraege" ToRole="vertragsarten" />
+        </EntityType>
+        <EntityType Name="vertragsarten">
+          <Key>
+            <PropertyRef Name="vertragsartID" />
+          </Key>
+          <Property Name="vertragsartID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="vertragsart" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vertragsartbeschr" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="vertraege" Relationship="VerMobiModel.FK_vertraege_vertragsarten" FromRole="vertragsarten" ToRole="vertraege" />
+        </EntityType>
+        <Association Name="FK_abteilungen_firmen">
+          <End Role="firmen" Type="VerMobiModel.firmen" Multiplicity="1" />
+          <End Role="abteilungen" Type="VerMobiModel.abteilungen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="firmen">
+              <PropertyRef Name="firmaID" />
+            </Principal>
+            <Dependent Role="abteilungen">
+              <PropertyRef Name="firmaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fahrzeuge_abteilungen">
+          <End Role="abteilungen" Type="VerMobiModel.abteilungen" Multiplicity="0..1" />
+          <End Role="fahrzeuge" Type="VerMobiModel.fahrzeuge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abteilungen">
+              <PropertyRef Name="abteilungID" />
+            </Principal>
+            <Dependent Role="fahrzeuge">
+              <PropertyRef Name="abteilungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nutzer_abteilungen">
+          <End Role="abteilungen" Type="VerMobiModel.abteilungen" Multiplicity="1" />
+          <End Role="nutzer" Type="VerMobiModel.nutzer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="abteilungen">
+              <PropertyRef Name="abteilungID" />
+            </Principal>
+            <Dependent Role="nutzer">
+              <PropertyRef Name="abteilungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_betriebssysteme">
+          <End Role="betriebssysteme" Type="VerMobiModel.betriebssysteme" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="betriebssysteme">
+              <PropertyRef Name="betriebssysID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="betriebssysID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_fahrzeuge">
+          <End Role="fahrzeuge" Type="VerMobiModel.fahrzeuge" Multiplicity="0..1" />
+          <End Role="simnutzung" Type="VerMobiModel.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fahrzeuge">
+              <PropertyRef Name="fahrzeugID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="fahrzeugID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_geraetehersteller">
+          <End Role="geraetehersteller" Type="VerMobiModel.geraetehersteller" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraetehersteller">
+              <PropertyRef Name="geraeteherstID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="geraeteherstID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_geraetemodelle">
+          <End Role="geraetemodelle" Type="VerMobiModel.geraetemodelle" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraetemodelle">
+              <PropertyRef Name="geraetemodellID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="geraetemodellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_geraetetypen">
+          <End Role="geraetetypen" Type="VerMobiModel.geraetetypen" Multiplicity="1" />
+          <End Role="geraete" Type="VerMobiModel.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraetetypen">
+              <PropertyRef Name="geraetetypID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="geraetetypID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_geraete_simgroessen">
+          <End Role="simgroessen" Type="VerMobiModel.simgroessen" Multiplicity="0..1" />
+          <End Role="geraete" Type="VerMobiModel.geraete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="simgroessen">
+              <PropertyRef Name="simgroesseID" />
+            </Principal>
+            <Dependent Role="geraete">
+              <PropertyRef Name="simgroesseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_geraete">
+          <End Role="geraete" Type="VerMobiModel.geraete" Multiplicity="0..1" />
+          <End Role="simnutzung" Type="VerMobiModel.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="geraete">
+              <PropertyRef Name="geraeteID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="geraeteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_telefonnummern_netze">
+          <End Role="netze" Type="VerMobiModel.netze" Multiplicity="0..1" />
+          <End Role="telefonnummern" Type="VerMobiModel.telefonnummern" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="netze">
+              <PropertyRef Name="netzID" />
+            </Principal>
+            <Dependent Role="telefonnummern">
+              <PropertyRef Name="netzID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_nutzer">
+          <End Role="nutzer" Type="VerMobiModel.nutzer" Multiplicity="0..1" />
+          <End Role="simnutzung" Type="VerMobiModel.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nutzer">
+              <PropertyRef Name="nutzerID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="nutzerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_provider">
+          <End Role="provider" Type="VerMobiModel.provider" Multiplicity="1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="provider">
+              <PropertyRef Name="providerID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="providerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simkarten_simgroessen1">
+          <End Role="simgroessen" Type="VerMobiModel.simgroessen" Multiplicity="0..1" />
+          <End Role="simkarten" Type="VerMobiModel.simkarten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="simgroessen">
+              <PropertyRef Name="simgroesseID" />
+            </Principal>
+            <Dependent Role="simkarten">
+              <PropertyRef Name="simgroesseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simkarten_telefonnummern">
+          <End Role="telefonnummern" Type="VerMobiModel.telefonnummern" Multiplicity="1" />
+          <End Role="simkarten" Type="VerMobiModel.simkarten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefonnummern">
+              <PropertyRef Name="telnrID" />
+            </Principal>
+            <Dependent Role="simkarten">
+              <PropertyRef Name="telnrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_simnutzung_simkarten">
+          <End Role="simkarten" Type="VerMobiModel.simkarten" Multiplicity="1" />
+          <End Role="simnutzung" Type="VerMobiModel.simnutzung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="simkarten">
+              <PropertyRef Name="simkartenID" />
+            </Principal>
+            <Dependent Role="simnutzung">
+              <PropertyRef Name="simkartenID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarife">
+          <End Role="tarife" Type="VerMobiModel.tarife" Multiplicity="1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarife">
+              <PropertyRef Name="tarifID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarifoptionen">
+          <End Role="tarifoptionen" Type="VerMobiModel.tarifoptionen" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifoptionen">
+              <PropertyRef Name="tarifoptionID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifoptionID1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarifoptionen1">
+          <End Role="tarifoptionen" Type="VerMobiModel.tarifoptionen" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifoptionen">
+              <PropertyRef Name="tarifoptionID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifoptionID2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_tarifoptionen2">
+          <End Role="tarifoptionen" Type="VerMobiModel.tarifoptionen" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tarifoptionen">
+              <PropertyRef Name="tarifoptionID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="tarifoptionID3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_telefonnummern_vertraege">
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="1" />
+          <End Role="telefonnummern" Type="VerMobiModel.telefonnummern" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vertraege">
+              <PropertyRef Name="vertragID" />
+            </Principal>
+            <Dependent Role="telefonnummern">
+              <PropertyRef Name="vertragID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_verbrauch_telefonnummern">
+          <End Role="telefonnummern" Type="VerMobiModel.telefonnummern" Multiplicity="1" />
+          <End Role="verbrauch" Type="VerMobiModel.verbrauch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefonnummern">
+              <PropertyRef Name="telnrID" />
+            </Principal>
+            <Dependent Role="verbrauch">
+              <PropertyRef Name="telnrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_verkaeufer">
+          <End Role="verkaeufer" Type="VerMobiModel.verkaeufer" Multiplicity="0..1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="verkaeufer">
+              <PropertyRef Name="verkaeuferID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="verkaeuferID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vertraege_vertragsarten">
+          <End Role="vertragsarten" Type="VerMobiModel.vertragsarten" Multiplicity="1" />
+          <End Role="vertraege" Type="VerMobiModel.vertraege" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vertragsarten">
+              <PropertyRef Name="vertragsartID" />
+            </Principal>
+            <Dependent Role="vertraege">
+              <PropertyRef Name="vertragsartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VerMobiModelStoreContainer" CdmEntityContainer="VerMobiEntities">
+          <EntitySetMapping Name="abteilungen">
+            <EntityTypeMapping TypeName="VerMobiModel.abteilungen">
+              <MappingFragment StoreEntitySet="abteilungen">
+                <ScalarProperty Name="abteilungID" ColumnName="abteilungID" />
+                <ScalarProperty Name="abteilung" ColumnName="abteilung" />
+                <ScalarProperty Name="firmaID" ColumnName="firmaID" />
+                <ScalarProperty Name="abteilungbeschr" ColumnName="abteilungbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="betriebssysteme">
+            <EntityTypeMapping TypeName="VerMobiModel.betriebssysteme">
+              <MappingFragment StoreEntitySet="betriebssysteme">
+                <ScalarProperty Name="betriebssysID" ColumnName="betriebssysID" />
+                <ScalarProperty Name="betriebssys" ColumnName="betriebssys" />
+                <ScalarProperty Name="betriebssysbeschr" ColumnName="betriebssysbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fahrzeuge">
+            <EntityTypeMapping TypeName="VerMobiModel.fahrzeuge">
+              <MappingFragment StoreEntitySet="fahrzeuge">
+                <ScalarProperty Name="fahrzeugID" ColumnName="fahrzeugID" />
+                <ScalarProperty Name="fahrzeugkennzeichen" ColumnName="fahrzeugkennzeichen" />
+                <ScalarProperty Name="fahrzeugmodell" ColumnName="fahrzeugmodell" />
+                <ScalarProperty Name="abteilungID" ColumnName="abteilungID" />
+                <ScalarProperty Name="fahrzeugnotiz" ColumnName="fahrzeugnotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="firmen">
+            <EntityTypeMapping TypeName="VerMobiModel.firmen">
+              <MappingFragment StoreEntitySet="firmen">
+                <ScalarProperty Name="firmaID" ColumnName="firmaID" />
+                <ScalarProperty Name="firmaname1" ColumnName="firmaname1" />
+                <ScalarProperty Name="firmaname2" ColumnName="firmaname2" />
+                <ScalarProperty Name="strasse" ColumnName="strasse" />
+                <ScalarProperty Name="plz" ColumnName="plz" />
+                <ScalarProperty Name="ort" ColumnName="ort" />
+                <ScalarProperty Name="land" ColumnName="land" />
+                <ScalarProperty Name="ansprechpartner" ColumnName="ansprechpartner" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="firmanotiz" ColumnName="firmanotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="geraete">
+            <EntityTypeMapping TypeName="VerMobiModel.geraete">
+              <MappingFragment StoreEntitySet="geraete">
+                <ScalarProperty Name="geraeteID" ColumnName="geraeteID" />
+                <ScalarProperty Name="geraetenr" ColumnName="geraetenr" />
+                <ScalarProperty Name="geraeteinventarnr" ColumnName="geraeteinventarnr" />
+                <ScalarProperty Name="geraeteimei" ColumnName="geraeteimei" />
+                <ScalarProperty Name="geraetetypID" ColumnName="geraetetypID" />
+                <ScalarProperty Name="geraeteherstID" ColumnName="geraeteherstID" />
+                <ScalarProperty Name="geraetemodellID" ColumnName="geraetemodellID" />
+                <ScalarProperty Name="simgroesseID" ColumnName="simgroesseID" />
+                <ScalarProperty Name="betriebssysID" ColumnName="betriebssysID" />
+                <ScalarProperty Name="inbetriebnahme" ColumnName="inbetriebnahme" />
+                <ScalarProperty Name="geraetenotiz" ColumnName="geraetenotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="geraetehersteller">
+            <EntityTypeMapping TypeName="VerMobiModel.geraetehersteller">
+              <MappingFragment StoreEntitySet="geraetehersteller">
+                <ScalarProperty Name="geraeteherstID" ColumnName="geraeteherstID" />
+                <ScalarProperty Name="geraeteherstname" ColumnName="geraeteherstname" />
+                <ScalarProperty Name="geraeteherstbeschr" ColumnName="geraeteherstbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="geraetemodelle">
+            <EntityTypeMapping TypeName="VerMobiModel.geraetemodelle">
+              <MappingFragment StoreEntitySet="geraetemodelle">
+                <ScalarProperty Name="geraetemodellID" ColumnName="geraetemodellID" />
+                <ScalarProperty Name="geraetemodell" ColumnName="geraetemodell" />
+                <ScalarProperty Name="geraetemodellbeschr" ColumnName="geraetemodellbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="geraetetypen">
+            <EntityTypeMapping TypeName="VerMobiModel.geraetetypen">
+              <MappingFragment StoreEntitySet="geraetetypen">
+                <ScalarProperty Name="geraetetypID" ColumnName="geraetetypID" />
+                <ScalarProperty Name="geraetetyp" ColumnName="geraetetyp" />
+                <ScalarProperty Name="geraetetypbeschr" ColumnName="geraetetypbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="netze">
+            <EntityTypeMapping TypeName="VerMobiModel.netze">
+              <MappingFragment StoreEntitySet="netze">
+                <ScalarProperty Name="netzID" ColumnName="netzID" />
+                <ScalarProperty Name="netzname" ColumnName="netzname" />
+                <ScalarProperty Name="netzbeschr" ColumnName="netzbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nutzer">
+            <EntityTypeMapping TypeName="VerMobiModel.nutzer">
+              <MappingFragment StoreEntitySet="nutzer">
+                <ScalarProperty Name="nutzerID" ColumnName="nutzerID" />
+                <ScalarProperty Name="vorname" ColumnName="vorname" />
+                <ScalarProperty Name="nachname" ColumnName="nachname" />
+                <ScalarProperty Name="abteilungID" ColumnName="abteilungID" />
+                <ScalarProperty Name="nutzernotiz" ColumnName="nutzernotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="provider">
+            <EntityTypeMapping TypeName="VerMobiModel.provider">
+              <MappingFragment StoreEntitySet="provider">
+                <ScalarProperty Name="providerID" ColumnName="providerID" />
+                <ScalarProperty Name="providername1" ColumnName="providername1" />
+                <ScalarProperty Name="providername2" ColumnName="providername2" />
+                <ScalarProperty Name="strasse" ColumnName="strasse" />
+                <ScalarProperty Name="plz" ColumnName="plz" />
+                <ScalarProperty Name="ort" ColumnName="ort" />
+                <ScalarProperty Name="land" ColumnName="land" />
+                <ScalarProperty Name="ansprechpartner" ColumnName="ansprechpartner" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="providernotiz" ColumnName="providernotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="simgroessen">
+            <EntityTypeMapping TypeName="VerMobiModel.simgroessen">
+              <MappingFragment StoreEntitySet="simgroessen">
+                <ScalarProperty Name="simgroesseID" ColumnName="simgroesseID" />
+                <ScalarProperty Name="simgroesse" ColumnName="simgroesse" />
+                <ScalarProperty Name="simgroessebeschr" ColumnName="simgroessebeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="simkarten">
+            <EntityTypeMapping TypeName="VerMobiModel.simkarten">
+              <MappingFragment StoreEntitySet="simkarten">
+                <ScalarProperty Name="simkartenID" ColumnName="simkartenID" />
+                <ScalarProperty Name="simkartennr" ColumnName="simkartennr" />
+                <ScalarProperty Name="pin1" ColumnName="pin1" />
+                <ScalarProperty Name="puk1" ColumnName="puk1" />
+                <ScalarProperty Name="pin2" ColumnName="pin2" />
+                <ScalarProperty Name="puk2" ColumnName="puk2" />
+                <ScalarProperty Name="simgroesseID" ColumnName="simgroesseID" />
+                <ScalarProperty Name="telnrID" ColumnName="telnrID" />
+                <ScalarProperty Name="simkartennotiz" ColumnName="simkartennotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="simnutzung">
+            <EntityTypeMapping TypeName="VerMobiModel.simnutzung">
+              <MappingFragment StoreEntitySet="simnutzung">
+                <ScalarProperty Name="simnutzungID" ColumnName="simnutzungID" />
+                <ScalarProperty Name="simkartenID" ColumnName="simkartenID" />
+                <ScalarProperty Name="geraeteID" ColumnName="geraeteID" />
+                <ScalarProperty Name="nutzerID" ColumnName="nutzerID" />
+                <ScalarProperty Name="fahrzeugID" ColumnName="fahrzeugID" />
+                <ScalarProperty Name="simausgabe" ColumnName="simausgabe" />
+                <ScalarProperty Name="simrueckgabe" ColumnName="simrueckgabe" />
+                <ScalarProperty Name="simnutzungnotiz" ColumnName="simnutzungnotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="VerMobiModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarife">
+            <EntityTypeMapping TypeName="VerMobiModel.tarife">
+              <MappingFragment StoreEntitySet="tarife">
+                <ScalarProperty Name="tarifID" ColumnName="tarifID" />
+                <ScalarProperty Name="tarifname" ColumnName="tarifname" />
+                <ScalarProperty Name="tarifbeschr" ColumnName="tarifbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarifoptionen">
+            <EntityTypeMapping TypeName="VerMobiModel.tarifoptionen">
+              <MappingFragment StoreEntitySet="tarifoptionen">
+                <ScalarProperty Name="tarifoptionID" ColumnName="tarifoptionID" />
+                <ScalarProperty Name="tarifoptionname" ColumnName="tarifoptionname" />
+                <ScalarProperty Name="tarifoptionbeschr" ColumnName="tarifoptionbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="telefonnummern">
+            <EntityTypeMapping TypeName="VerMobiModel.telefonnummern">
+              <MappingFragment StoreEntitySet="telefonnummern">
+                <ScalarProperty Name="telnrID" ColumnName="telnrID" />
+                <ScalarProperty Name="telnr" ColumnName="telnr" />
+                <ScalarProperty Name="vertragID" ColumnName="vertragID" />
+                <ScalarProperty Name="netzID" ColumnName="netzID" />
+                <ScalarProperty Name="telnrnotiz" ColumnName="telnrnotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="verbrauch">
+            <EntityTypeMapping TypeName="VerMobiModel.verbrauch">
+              <MappingFragment StoreEntitySet="verbrauch">
+                <ScalarProperty Name="verbrauchID" ColumnName="verbrauchID" />
+                <ScalarProperty Name="telnrID" ColumnName="telnrID" />
+                <ScalarProperty Name="verbrauchbeginn" ColumnName="verbrauchbeginn" />
+                <ScalarProperty Name="verbrauchende" ColumnName="verbrauchende" />
+                <ScalarProperty Name="datenvolumeninkl" ColumnName="datenvolumeninkl" />
+                <ScalarProperty Name="datenverbrauch" ColumnName="datenverbrauch" />
+                <ScalarProperty Name="telefonieinkl" ColumnName="telefonieinkl" />
+                <ScalarProperty Name="telefonieverbrauch" ColumnName="telefonieverbrauch" />
+                <ScalarProperty Name="smsinkl" ColumnName="smsinkl" />
+                <ScalarProperty Name="smsverbrauch" ColumnName="smsverbrauch" />
+                <ScalarProperty Name="grundpreis" ColumnName="grundpreis" />
+                <ScalarProperty Name="rgbetrag" ColumnName="rgbetrag" />
+                <ScalarProperty Name="verbrauchnotiz" ColumnName="verbrauchnotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="verkaeufer">
+            <EntityTypeMapping TypeName="VerMobiModel.verkaeufer">
+              <MappingFragment StoreEntitySet="verkaeufer">
+                <ScalarProperty Name="verkaeuferID" ColumnName="verkaeuferID" />
+                <ScalarProperty Name="verkaeufername1" ColumnName="verkaeufername1" />
+                <ScalarProperty Name="verkaeufername2" ColumnName="verkaeufername2" />
+                <ScalarProperty Name="strasse" ColumnName="strasse" />
+                <ScalarProperty Name="plz" ColumnName="plz" />
+                <ScalarProperty Name="ort" ColumnName="ort" />
+                <ScalarProperty Name="land" ColumnName="land" />
+                <ScalarProperty Name="ansprechpartner" ColumnName="ansprechpartner" />
+                <ScalarProperty Name="tel1" ColumnName="tel1" />
+                <ScalarProperty Name="tel2" ColumnName="tel2" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="email2" ColumnName="email2" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="verkaeufernotiz" ColumnName="verkaeufernotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vertraege">
+            <EntityTypeMapping TypeName="VerMobiModel.vertraege">
+              <MappingFragment StoreEntitySet="vertraege">
+                <ScalarProperty Name="vertragID" ColumnName="vertragID" />
+                <ScalarProperty Name="vertragsnr" ColumnName="vertragsnr" />
+                <ScalarProperty Name="vertragsartID" ColumnName="vertragsartID" />
+                <ScalarProperty Name="verkaeuferID" ColumnName="verkaeuferID" />
+                <ScalarProperty Name="providerID" ColumnName="providerID" />
+                <ScalarProperty Name="vertragsbeginn" ColumnName="vertragsbeginn" />
+                <ScalarProperty Name="kuendigungsfrist" ColumnName="kuendigungsfrist" />
+                <ScalarProperty Name="gekuendigtam" ColumnName="gekuendigtam" />
+                <ScalarProperty Name="gekuendigtzum" ColumnName="gekuendigtzum" />
+                <ScalarProperty Name="vertragsende" ColumnName="vertragsende" />
+                <ScalarProperty Name="tarifID" ColumnName="tarifID" />
+                <ScalarProperty Name="datenvolumeninkl" ColumnName="datenvolumeninkl" />
+                <ScalarProperty Name="telefonieinkl" ColumnName="telefonieinkl" />
+                <ScalarProperty Name="smsinkl" ColumnName="smsinkl" />
+                <ScalarProperty Name="grundpreis" ColumnName="grundpreis" />
+                <ScalarProperty Name="tarifoptionID1" ColumnName="tarifoptionID1" />
+                <ScalarProperty Name="tarifoptionID2" ColumnName="tarifoptionID2" />
+                <ScalarProperty Name="tarifoptionID3" ColumnName="tarifoptionID3" />
+                <ScalarProperty Name="vertragsnotiz" ColumnName="vertragsnotiz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vertragsarten">
+            <EntityTypeMapping TypeName="VerMobiModel.vertragsarten">
+              <MappingFragment StoreEntitySet="vertragsarten">
+                <ScalarProperty Name="vertragsartID" ColumnName="vertragsartID" />
+                <ScalarProperty Name="vertragsart" ColumnName="vertragsart" />
+                <ScalarProperty Name="vertragsartbeschr" ColumnName="vertragsartbeschr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
