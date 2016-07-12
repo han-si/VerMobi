@@ -4,53 +4,53 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dad2d3935376416fbb3186dfa6a3f4b7" Name="Diagramm1">
-        <EntityTypeShape EntityType="VerMobiModel.abteilungen" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.betriebssysteme" Width="1.5" PointX="5.25" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.fahrzeuge" Width="1.5" PointX="7.5" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.firmen" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.geraete" Width="1.5" PointX="7.5" PointY="21" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.geraetehersteller" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.geraetemodelle" Width="1.5" PointX="5.25" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.geraetetypen" Width="1.5" PointX="5.25" PointY="26" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.netze" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.nutzer" Width="1.5" PointX="7.5" PointY="26.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.provider" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.simgroessen" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.simkarten" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.simnutzung" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.tarife" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.tarifoptionen" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.telefonnummern" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.verbrauch" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.verkaeufer" Width="1.5" PointX="0.75" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.vertraege" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VerMobiModel.vertragsarten" Width="1.5" PointX="0.75" PointY="23.125" IsExpanded="true" />
-        <AssociationConnector Association="VerMobiModel.FK_abteilungen_firmen" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_fahrzeuge_abteilungen" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_nutzer_abteilungen" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_geraete_betriebssysteme" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_simnutzung_fahrzeuge" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_geraete_geraetehersteller" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_geraete_geraetemodelle" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_geraete_geraetetypen" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_geraete_simgroessen" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_simnutzung_geraete" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_telefonnummern_netze" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_simnutzung_nutzer" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_provider" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_simkarten_simgroessen1" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_simkarten_telefonnummern" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_simnutzung_simkarten" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_tarife" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_tarifoptionen" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_tarifoptionen1" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_tarifoptionen2" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_telefonnummern_vertraege" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_verbrauch_telefonnummern" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_verkaeufer" ManuallyRouted="false" />
-        <AssociationConnector Association="VerMobiModel.FK_vertraege_vertragsarten" ManuallyRouted="false" />
+      <Diagram DiagramId="c20a0a2626c245fbb4366fdb152821f9" Name="Diagram1">
+        <EntityTypeShape EntityType="VerMobiModel.Abteilungen" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Betriebssysteme" Width="1.5" PointX="7.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Fahrzeuge" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Firmen" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Geraete" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Geraetehersteller" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Geraetemodelle" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Geraetetypen" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Netze" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Nutzer" Width="1.5" PointX="9.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Provider" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Simgroessen" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Simkarten" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Simnutzung" Width="1.5" PointX="9.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Tarife" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Tarifoptionen" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Telefonnummern" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Verbrauch" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Verkaeufer" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Vertraege" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VerMobiModel.Vertragsarten" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <AssociationConnector Association="VerMobiModel.FK_Abteilungen_Firmen" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Fahrzeuge_Abteilungen" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Nutzer_Abteilungen" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Geraete_Betriebssysteme" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Simnutzung_Fahrzeuge" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Geraete_Geraetehersteller" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Geraete_Geraetemodelle" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Geraete_Geraetetypen" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Geraete_Simgroessen" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Simnutzung_Geraete" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Telefonnummern_Netze" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Simnutzung_Nutzer" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Simkarten_Simgroessen" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Simkarten_Telefonnummern" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Simnutzung_Simkarten" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Tarife" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Tarifoptionen1" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Tarifoptionen2" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Tarifoptionen3" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Telefonnummern_Vertraege" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Verbrauch_Telefonnummern" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Verkaeufer" ManuallyRouted="false" />
+        <AssociationConnector Association="VerMobiModel.FK_Vertraege_Vertragsarten" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

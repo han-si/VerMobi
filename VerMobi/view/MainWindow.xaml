@@ -142,21 +142,21 @@
             <TabItem Header="Verkäufer">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
-                        <view:Verkaeufer HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <view:Verkaeufer HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     </Grid>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Verträge">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
-                        <view:Vertraege HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <view:Vertraege HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     </Grid>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Vertragsarten">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
-                        <view:Vertragsarten HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <view:Vertragsarten HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     </Grid>
                 </ScrollViewer>
             </TabItem>

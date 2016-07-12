@@ -7,8 +7,6 @@ using System.Windows.Input;
 
 namespace VerMobi.viewmodel
 {
-
-
     public class DelegateCommand : ICommand
     {
         public static Func<object, bool> CanExecuteTrue = obj => true;

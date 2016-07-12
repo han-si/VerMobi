@@ -52,7 +52,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -75,65 +74,65 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="abteilungen.cs">
+    <Compile Include="Abteilungen.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="betriebssysteme.cs">
+    <Compile Include="Betriebssysteme.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="fahrzeuge.cs">
+    <Compile Include="Fahrzeuge.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="firmen.cs">
+    <Compile Include="Firmen.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="geraete.cs">
+    <Compile Include="Geraete.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="geraetehersteller.cs">
+    <Compile Include="Geraetehersteller.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="geraetemodelle.cs">
+    <Compile Include="Geraetemodelle.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="geraetetypen.cs">
+    <Compile Include="Geraetetypen.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="model\FooBaa.cs" />
-    <Compile Include="netze.cs">
+    <Compile Include="model\Zaehler.cs" />
+    <Compile Include="Netze.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="nutzer.cs">
+    <Compile Include="Nutzer.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="provider.cs">
+    <Compile Include="Provider.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="simgroessen.cs">
+    <Compile Include="Simgroessen.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="simkarten.cs">
+    <Compile Include="Simkarten.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="simnutzung.cs">
+    <Compile Include="Simnutzung.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="tarife.cs">
+    <Compile Include="Tarife.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="tarifoptionen.cs">
+    <Compile Include="Tarifoptionen.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="telefonnummern.cs">
+    <Compile Include="Telefonnummern.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="verbrauch.cs">
+    <Compile Include="Verbrauch.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="verkaeufer.cs">
+    <Compile Include="Verkaeufer.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
     <Compile Include="VerMobi.Context.cs">
@@ -151,10 +150,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VerMobi.edmx</DependentUpon>
     </Compile>
-    <Compile Include="vertraege.cs">
+    <Compile Include="Vertraege.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
-    <Compile Include="vertragsarten.cs">
+    <Compile Include="Vertragsarten.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
     <Compile Include="view\Abteilungen.xaml.cs">
@@ -291,16 +290,16 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\Tarife.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="view\Tarifoptionen.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="view\Telefonnummern.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="view\Uebersicht.xaml">
       <SubType>Designer</SubType>
@@ -347,18 +346,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>VerMobi.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="VerMobi.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VerMobi.edmx</DependentUpon>
-      <LastGenOutput>VerMobi.Context.cs</LastGenOutput>
-    </None>
     <None Include="VerMobi.edmx.diagram">
       <DependentUpon>VerMobi.edmx</DependentUpon>
-    </None>
-    <None Include="VerMobi.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>VerMobi.edmx</DependentUpon>
-      <LastGenOutput>VerMobi.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -372,6 +361,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VerMobi.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VerMobi.Context.cs</LastGenOutput>
+      <DependentUpon>VerMobi.edmx</DependentUpon>
+    </Content>
+    <Content Include="VerMobi.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VerMobi.edmx</DependentUpon>
+      <LastGenOutput>VerMobi.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
