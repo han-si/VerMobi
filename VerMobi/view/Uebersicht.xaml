@@ -18,8 +18,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight" HorizontalAlignment="Left" Height="30" Margin="10,6,0,0" VerticalAlignment="Center" Width="Auto">
-                <Label x:Name="UebersLabel1" Content="Die Datenbank " VerticalAlignment="Center" Height="26" Width="Auto"/>
-                <Label x:Name="UebersLabelDbName" Content="(db-name)" VerticalAlignment="Center" Height="26" Width="Auto"/>
+                <Label x:Name="UebersLabel1" Content="Die Datenbank" VerticalAlignment="Center" Height="26" Width="Auto"/>
+                <!--<Label x:Name="UebersLabelDbName" Content="(db-name)" VerticalAlignment="Center" Height="26" Width="Auto"/>-->
                 <Label x:Name="UebersLabel2" Content="enthält:" VerticalAlignment="Center" Height="26" Width="Auto"/>
             </StackPanel>
         </Grid>
@@ -39,27 +39,27 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="UebersLabelVertr1" Content="Telefon-Verträge:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="Auto"/>
+            <Label x:Name="UebersLabelVertr1" Content="Telefon-Verträge:" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Height="26" Width="Auto"/>
             <Label x:Name="UebersLabelVertr1Anz" Content="{Binding AnzVertr}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Height="26" Width="Auto"/>
-            <Label x:Name="UebersLabelVertr2" Content="davon aktiv:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="Auto"/>
+            <Label x:Name="UebersLabelVertr2" Content="davon aktiv:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Height="26" Width="Auto"/>
             <Label x:Name="UebersLabelVertr2AnzAktiv" Content="{Binding AnzVertrAktiv}" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelTelNr1" Content="Telefon-Nummern:" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto"/>
+            <Label x:Name="UebersLabelTelNr1" Content="Telefon-Nummern:" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" HorizontalContentAlignment="Right"/>
             <Label x:Name="UebersLabelTelNr1Anz" Content="{Binding AnzTelNr}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="1" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelTelNr2" Content="davon aktiv:" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="1" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelTelNr2" Content="davon aktiv:" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="1" Margin="0"/>
             <Label x:Name="UebersLabelTelNr2AnzAktiv" Content="{Binding AnzTelNrAktiv}" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="1" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelSim1" Content="SIM-Karten:" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelSim1" Content="SIM-Karten:" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="0"/>
             <Label x:Name="UebersLabelSim1Anz" Content="{Binding AnzSimKarten}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="2" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelSim2" Content="davon aktiv:" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="2" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelSim2" Content="davon aktiv:" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="2" Margin="0" HorizontalContentAlignment="Right"/>
             <Label x:Name="UebersLabelSim2AnzAktiv" Content="{Binding AnzSimKartenAktiv}" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="2" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelGeraete1" Content="Geräte:" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelGeraete1" Content="Geräte:" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="0"/>
             <Label x:Name="UebersLabelGeraete1Anz" Content="{Binding AnzGeraete}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="3" Margin="10,1,0,0"/>
-            <Label x:Name="UebersLabelGeraete2" Content="davon in Benutzung:" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="3" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelGeraete2" Content="davon in Benutzung:" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="3" Margin="10,0,0,0"/>
             <Label x:Name="UebersLabelGeraete2AnzAktiv" Content=" " Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="3" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelNutzer" Content="Nutzer:" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelNutzer" Content="Nutzer:" HorizontalAlignment="Right" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="0"/>
             <Label x:Name="UebersLabelNutzerAnz" Content="{Binding AnzNutzer}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="4" Margin="10,0,0,0"/>
-            <Label x:Name="UebersLabelFahrz" Content="Fahrzeuge:" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="10,0,0,0"/>
+            <Label x:Name="UebersLabelFahrz" Content="Fahrzeuge:" HorizontalAlignment="Right" Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" Height="26" Width="Auto" Margin="0"/>
             <Label x:Name="UebersLabelFahrzAnz" Content="{Binding AnzFahrz}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="Auto" Grid.Row="5" Margin="10,0,0,0"/>
-            <Button x:Name="UebersButtonAktual" Content="aktualisieren" HorizontalAlignment="Left" Margin="8,7,0,0" Grid.Row="6" Grid.Column="0" VerticalAlignment="Top" Width="80"/>
+            <!--<Button x:Name="UebersButtonAktual" Content="aktualisieren" HorizontalAlignment="Left" Margin="8,7,0,0" Grid.Row="6" Grid.Column="0" VerticalAlignment="Top" Width="80"/>-->
         </Grid>
     </Grid>
 </UserControl>

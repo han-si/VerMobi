@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:view="clr-namespace:VerMobi.view" x:Class="VerMobi.MainWindow"
+        xmlns:view="clr-namespace:VerMobi.view" 
+        x:Class="VerMobi.MainWindow"
         mc:Ignorable="d"
-        Title="VerMobi - Verwaltung Mobilfunk (Vers. 0.6)" Height="740" Width="1100" Icon="../images/icon.ico">
+        Title="Vertragsverwaltung" Height="700" Width="925" Icon="../images/icon.ico">
     <Grid>
         <TabControl x:Name="TabControl" Height="Auto" Margin="10,10,10,10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto">
             <TabItem Header="Übersicht">

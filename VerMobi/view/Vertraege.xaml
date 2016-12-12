@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
-             d:DesignHeight="730" d:DesignWidth="1000">
+             d:DesignHeight="730" d:DesignWidth="875">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="VertrTextBoxVertrSuche" ToolTip="Bitte eine Vertrags-Nr. eingeben oder leer lassen um alle Verträge anzeigen zu lassen." HorizontalAlignment="Left" Height="24" TextWrapping="NoWrap" Text="Vertrags-Nr." VerticalAlignment="Center" Width="150" Grid.Column="1" Margin="0,3" Grid.Row="1"/>
         <Button x:Name="VertrButtonVertrSuchen" Content="suchen" ToolTip="Vertrags-Nr. suchen." HorizontalAlignment="Left" Margin="170,4,0,4" VerticalAlignment="Center" Width="60" Height="22" Grid.Column="1" Grid.Row="1"/>
-        <DataGrid x:Name="VertrDataGridVertrListe" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Vertraege}" SelectedItem="{Binding Path=Vertraege}" Height="56" Width="Auto">
+        <DataGrid x:Name="VertrDataGridVertrListe" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Path=Vertraege}" SelectedItem="{Binding Path=Vertraege}" Height="56" Width="Auto" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}"/>
                 <DataGridTextColumn Header="Vertragsart" Binding="{Binding ''}"/>
@@ -37,16 +37,18 @@
                 <DataGridTextColumn Header="Vertr.-Ende" Binding="{Binding '', StringFormat={}{0:dd.MM.yyy}}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="VertrLabelUeberschrDataGridTelNutzer" Content="Zum ausgewählten Vertrag gehören:" HorizontalAlignment="Left" Margin="0,2" VerticalAlignment="Center" Width="210" Grid.Column="1" Grid.Row="3"/>
+        <Label x:Name="VertrLabelUeberschrDataGridTelNutzer" Content="Suchergebnis:" HorizontalAlignment="Left" Margin="0,2" VerticalAlignment="Center" Width="210" Grid.Column="1" Grid.Row="3"/>
         <DataGrid x:Name="VertrDataGridTelNutzer" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,10,10" Grid.Row="4" VerticalAlignment="Top" AutoGenerateColumns="False" ItemsSource="{Binding Vertraege}" SelectedItem="{Binding Vertraege}" Height="56" Width="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}"/>
+                <DataGridTextColumn Header="Vertrags-Nr." Binding="{Binding ''}" />
                 <DataGridTextColumn Header="Tel.-Nr." Binding="{Binding ''}"/>
                 <DataGridTextColumn Header="SIM-Karte-Nr." Binding="{Binding ''}"/>
                 <DataGridTextColumn Header="Nutzer" Binding="{Binding ''}"/>
                 <DataGridTextColumn Header="Fahrzeug" Binding="{Binding ''}"/>
                 <DataGridTextColumn Header="Gerät" Binding="{Binding ''}"/>
+
             </DataGrid.Columns>
+            
         </DataGrid>
         <Grid HorizontalAlignment="Left" Height="370" Grid.Row="5" VerticalAlignment="Top" Width="850" Margin="0,10,0,0" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -76,7 +78,7 @@
             <Label x:Name="VertrLabelProv" Content="Provider: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="3"/>
             <ComboBox x:Name="VertrComboBoxProv" IsEditable="True" IsReadOnly="True" Text=" " ToolTip="Bitte Provider/Netzanbieter auswählen (Pflichtfeld)." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="3"/>
             <Label x:Name="VertrLabelBeginn" Content="Vertrags Beginn: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="4"/>
-            <DatePicker x:Name="VertrDatePickerBeginn" ToolTip="Vertragsbeginn (Pflichtfeld)" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Row="4" Grid.Column="1"/>
+            <DatePicker x:Name="VertrDatePickerBeginn" ToolTip=" " HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Row="4" Grid.Column="1"/>
             <Label x:Name="VertrLabelKuendFrist" Content="Kündigungsfrist" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="5"/>
             <DatePicker x:Name="VertrDatePickerKuendFrist" ToolTip="Kündigungsfrist bis zum: (kein Pflichtfeld)" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="5"/>
             <Label x:Name="VertrLabelGekuendAm" Content="gekündigt am:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="6"/>
@@ -86,7 +88,7 @@
             <Label x:Name="VertrLabelEnde" Content="Vertragsende:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="110" Grid.Column="0" Grid.Row="8"/>
             <DatePicker x:Name="VertrDatePickerEnde" ToolTip="Vertragsende (kein Pflichtfeld)" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Column="1" Grid.Row="8"/>
             <Label x:Name="VertrLabelTarif" Content="Tarif: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="0" />
-            <ComboBox x:Name="VertrComboBoxTarif" IsEditable="True" IsReadOnly="True" Text="Tarif *" ToolTip="Bitte Tarif auswählen (Pflichtfeld)." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Column="3" Grid.Row="0" />
+            <ComboBox x:Name="VertrComboBoxTarif" IsEditable="True" IsReadOnly="True" Text=" " ToolTip="Bitte Tarif auswählen (Pflichtfeld)." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" Grid.Column="3" Grid.Row="0" />
             <Label x:Name="VertrLabelDatenInkl" Content="Datenvolumen inkl.:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="1" />
             <TextBox x:Name="VertrTextBoxDatenInkl" Text=" " ToolTip="Datenvolumen nur angeben wenn der Vertrag keine Daten-Flatrate enthält. (Angabe in KByte)" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="145" Grid.Row="1" Grid.Column="3"/>
             <Label x:Name="VertrLabelTelInkl" Content="Telefonie inkl.:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="120" Grid.Column="2" Grid.Row="2" />

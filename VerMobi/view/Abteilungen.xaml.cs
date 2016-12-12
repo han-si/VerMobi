@@ -24,5 +24,12 @@ namespace VerMobi.view
         {
             InitializeComponent();
         }
+
+        private void AbtButtonFormAbtZuruecksetzen_Click(object sender, RoutedEventArgs e)
+        {
+            AbtTextBoxAbtBeschr.Clear();
+            AbtTextBoxAbtName.Clear();
+            AbtTextBoxAbtSuche.Clear();
+        }
     }
 }
