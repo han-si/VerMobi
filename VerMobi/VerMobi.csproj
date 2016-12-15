@@ -101,6 +101,10 @@
     <Compile Include="Geraetetypen.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>
     </Compile>
+    <Compile Include="model\AbtDataGrid.cs" />
+    <Compile Include="model\CopyToDataTable.cs" />
+    <Compile Include="model\ObjectShredder.cs" />
+    <Compile Include="model\TempTabelle.cs" />
     <Compile Include="model\Zaehler.cs" />
     <Compile Include="Netze.cs">
       <DependentUpon>VerMobi.tt</DependentUpon>

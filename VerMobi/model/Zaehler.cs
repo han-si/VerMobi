@@ -112,7 +112,6 @@ namespace VerMobi.model
                 var fahrzeuge = db.Fahrzeuge;
                 return fahrzeuge.Count();
             }
-        }
-         
+        }   
     }
 }
