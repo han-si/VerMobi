@@ -12,6 +12,7 @@ using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VerMobi.model;
+using DataGrid = System.Windows.Controls.DataGrid;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace VerMobi.view
@@ -30,17 +32,21 @@ namespace VerMobi.view
     /// </summary>
     public partial class Abteilungen : UserControl
     {
+        
         public Abteilungen()
         {
             InitializeComponent();
+
         }
 
         private void AbtButtonFormAbtZuruecksetzen_Click(object sender, RoutedEventArgs e)
         {
+            AbtLabelAbtIdText.Content = string.Empty;
             AbtTextBoxAbtBeschr.Clear();
             AbtTextBoxAbtName.Clear();
             AbtTextBoxAbtSuche.Clear();
         }
+
 
         private void AbtButtonAbtSuchen_Click(object sender, RoutedEventArgs e)
         {
@@ -56,35 +62,72 @@ namespace VerMobi.view
                         Firma = abt.Firmen.firmaname1,
                         Notiz = abt.abteilungbeschr
                     };
-                foreach (var info in treffer)
-                {
-                    Console.WriteLine(@"{0} | {1} | {2} | {3}", info.ID, info.Abteilung, info.Firma, info.Notiz);
-                }
+                //foreach (var info in treffer)
+                //{
+                //    Console.WriteLine(@"{0} | {1} | {2} | {3}", info.ID, info.Abteilung, info.Firma, info.Notiz);
+                //}
 
                 AbtDataGridAbtListe.ItemsSource = treffer.ToList();
 
-                #region
+            }
+        }
 
-                //// Bind the System.Windows.Forms.DataGridView object
-                //// to the System.Windows.Forms.BindingSource object.
-                //DataGridView.DataSource = AbtDataGridAbtListe;
+        private void AbtDataGridAbtListe_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var selectRow = AbtDataGridAbtListe.SelectedItem;
+            if (selectRow == null) return;
 
-                //// Fill the DataSet.
-                //DataSet ds = new DataSet { Locale = CultureInfo.InvariantCulture };
-                //FillDataSet(ds);
+            using (var db = new VerMobiEntities())
+            {
+                var abtid = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).ID;
+                AbtLabelAbtIdText.Content = abtid;
+                var abtt = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Abteilung;
+                AbtTextBoxAbtName.Text = abtt;
+                var abtb = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Notiz;
+                AbtTextBoxAbtBeschr.Text = abtb;
 
-                //DataTable dt = ds.Tables["Abteilungen"];
+                Console.WriteLine(@"ID ist : {0} ", abtid);
+                Console.WriteLine(@"==================");
 
-                //IEnumerable<DataRow> query =
-                //    from abt in dt.AsEnumerable()
-                //    where abt.Field<string>("abteilung") == AbtTextBoxAbtSuche.Text
-                //    select abt;
+                var treffer =
+                    from abt in db.Abteilungen
+                    join nutz in db.Nutzer on abt.abteilungID equals nutz.abteilungID 
 
-                //DataTable boundTable = DataTableExtensions.CopyToDataTable(query);
+                    //from simn in db.Simnutzung
+                    //join nutz in db.Nutzer on simn.nutzerID equals nutz.nutzerID into sn
+                    //from nutz in sn
+                    //join abt in db.Abteilungen on nutz.abteilungID equals abt.abteilungID
+                    //from simk in db. Simkarten
+                    //from telnr in db.Telefonnummern
+                    //join simn in db.Simnutzung on nutz.nutzerID equals simn.nutzerID
+                    //from nutz in db.Nutzer
+                    //join nutze in db.Nutzer on simn.nutzerID equals nutze.nutzerID
+                    //join simn in db.Simnutzung on nutz.nutzerID equals simn.nutzerID 
+                    //join simk in db.Simkarten on simn.simkartenID equals simk.simkartenID
+                
+                    where abt.abteilungID == abtid
+                    //&& nutz.nutzerID == simn.nutzerID
+                
+                    select new TempTabelle
+                    {
+                        ID = abt.abteilungID,
+                        Abteilung = abt.abteilung,
+                        //Vertragsnr = simn.Simkarten.Telefonnummern.Vertraege.vertragsnr,
+                        //Telnr = simn.Simkarten.Telefonnummern.telnr,
+                        //Simkarte = simk.simkartennr,
+                        Vorname = nutz.vorname,
+                        Nachname =nutz.nachname,
+                        //Fahrzeug = simn.Fahrzeuge.fahrzeugkennzeichen,
+                        //Geraet = simn.Geraete.geraetenr,
+                        Notiz = abt.abteilungbeschr
+                    };
+                foreach (var info in treffer)
+                {
+                    Console.WriteLine(@"{0} | {1} | {2} | {3} | {4} | {5} | {6} | {7}", 
+                        info.ID, info.Abteilung, info.Vertragsnr, info.Telnr, info.Simkarte, info.Vorname, info.Nachname, info.Fahrzeug, info.Geraet, info.Notiz);
+                }
 
-                //AbtDataGridAbtListe.DataSource = boundTable;
-
-                #endregion
+                AbtDataGridAbtVertrTel.ItemsSource = treffer.ToList();
 
             }
         }
