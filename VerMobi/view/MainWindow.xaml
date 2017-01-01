@@ -23,7 +23,7 @@
                     </Grid>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Betriebssysteme">
+            <!--<TabItem Header="Betriebssysteme">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
                         <view:Betriebssysteme HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
@@ -160,7 +160,7 @@
                         <view:Vertragsarten HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
                     </Grid>
                 </ScrollViewer>
-            </TabItem>
+            </TabItem>-->
         </TabControl>
     </Grid>
 </Window>

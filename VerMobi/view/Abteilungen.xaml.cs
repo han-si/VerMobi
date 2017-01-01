@@ -62,10 +62,10 @@ namespace VerMobi.view
                         Firma = abt.Firmen.firmaname1,
                         Notiz = abt.abteilungbeschr
                     };
-                //foreach (var info in treffer)
-                //{
-                //    Console.WriteLine(@"{0} | {1} | {2} | {3}", info.ID, info.Abteilung, info.Firma, info.Notiz);
-                //}
+                foreach (var info in treffer)
+                {
+                    Console.WriteLine(@"{0} | {1} | {2} | {3}", info.ID, info.Abteilung, info.Firma, info.Notiz);
+                }
 
                 AbtDataGridAbtListe.ItemsSource = treffer.ToList();
 
@@ -86,35 +86,28 @@ namespace VerMobi.view
                 var abtb = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Notiz;
                 AbtTextBoxAbtBeschr.Text = abtb;
 
-                Console.WriteLine(@"ID ist : {0} ", abtid);
-                Console.WriteLine(@"==================");
+                //Ausgabe zum Test ob die richtige Abteiluns-ID ankommt
+                Console.WriteLine(@"======================================");
+                Console.WriteLine(@"ID der selektierten Abteilung ist : {0} ", abtid);
+                Console.WriteLine(@"======================================");
 
                 var treffer =
                     from abt in db.Abteilungen
                     join nutz in db.Nutzer on abt.abteilungID equals nutz.abteilungID 
-
-                    //from simn in db.Simnutzung
-                    //join nutz in db.Nutzer on simn.nutzerID equals nutz.nutzerID into sn
-                    //from nutz in sn
-                    //join abt in db.Abteilungen on nutz.abteilungID equals abt.abteilungID
-                    //from simk in db. Simkarten
-                    //from telnr in db.Telefonnummern
-                    //join simn in db.Simnutzung on nutz.nutzerID equals simn.nutzerID
-                    //from nutz in db.Nutzer
-                    //join nutze in db.Nutzer on simn.nutzerID equals nutze.nutzerID
-                    //join simn in db.Simnutzung on nutz.nutzerID equals simn.nutzerID 
-                    //join simk in db.Simkarten on simn.simkartenID equals simk.simkartenID
+                    
+                    join simn in db.Simnutzung on nutz.nutzerID equals simn.nutzerID
+                    join simk in db.Simkarten on simn.simkartenID equals simk.simkartenID
                 
                     where abt.abteilungID == abtid
-                    //&& nutz.nutzerID == simn.nutzerID
+                    //&& simn.simrueckgabe < heute
                 
                     select new TempTabelle
                     {
                         ID = abt.abteilungID,
                         Abteilung = abt.abteilung,
                         //Vertragsnr = simn.Simkarten.Telefonnummern.Vertraege.vertragsnr,
-                        //Telnr = simn.Simkarten.Telefonnummern.telnr,
-                        //Simkarte = simk.simkartennr,
+                        Telnr = simn.Simkarten.Telefonnummern.telnr,
+                        Simkarte = simk.simkartennr,
                         Vorname = nutz.vorname,
                         Nachname =nutz.nachname,
                         //Fahrzeug = simn.Fahrzeuge.fahrzeugkennzeichen,
