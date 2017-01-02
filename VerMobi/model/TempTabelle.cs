@@ -8,7 +8,7 @@ namespace VerMobi.model
 {
     public class TempTabelle
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Abteilung { get; set; }
         public string Firma { get; set; }
         public string Notiz { get; set; }

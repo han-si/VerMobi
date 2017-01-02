@@ -23,6 +23,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VerMobi.model;
 using DataGrid = System.Windows.Controls.DataGrid;
+using MessageBox = System.Windows.MessageBox;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace VerMobi.view
@@ -36,7 +37,23 @@ namespace VerMobi.view
         public Abteilungen()
         {
             InitializeComponent();
+            InitComboBox();
+        }
 
+        private void InitComboBox()
+        {
+            using (var db = new VerMobiEntities())
+            {
+                var treffer = from firm in db.Firmen
+                    select new TempTabelle
+                    {
+                        Firma = firm.firmaname1
+                    };
+                foreach (var e in treffer)
+                {
+                    AbtComboBoxAbtFirma.Items.Add(e.Firma);
+                }
+            }
         }
 
         private void AbtButtonFormAbtZuruecksetzen_Click(object sender, RoutedEventArgs e)
@@ -45,8 +62,8 @@ namespace VerMobi.view
             AbtTextBoxAbtBeschr.Clear();
             AbtTextBoxAbtName.Clear();
             AbtTextBoxAbtSuche.Clear();
+            AbtComboBoxAbtFirma.SelectedIndex = -1;
         }
-
 
         private void AbtButtonAbtSuchen_Click(object sender, RoutedEventArgs e)
         {
@@ -57,14 +74,14 @@ namespace VerMobi.view
                     where abt.abteilung.StartsWith(AbtTextBoxAbtSuche.Text)
                     select new TempTabelle
                     {
-                        ID = abt.abteilungID,
+                        Id = abt.abteilungID,
                         Abteilung = abt.abteilung,
                         Firma = abt.Firmen.firmaname1,
                         Notiz = abt.abteilungbeschr
                     };
                 foreach (var info in treffer)
                 {
-                    Console.WriteLine(@"{0} | {1} | {2} | {3}", info.ID, info.Abteilung, info.Firma, info.Notiz);
+                    Console.WriteLine(@"{0} | {1} | {2} | {3}", info.Id, info.Abteilung, info.Firma, info.Notiz);
                 }
 
                 AbtDataGridAbtListe.ItemsSource = treffer.ToList();
@@ -79,45 +96,48 @@ namespace VerMobi.view
 
             using (var db = new VerMobiEntities())
             {
-                var abtid = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).ID;
+                var abtid = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Id;
                 AbtLabelAbtIdText.Content = abtid;
-                var abtt = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Abteilung;
-                AbtTextBoxAbtName.Text = abtt;
+                var abtn = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Abteilung;
+                AbtTextBoxAbtName.Text = abtn;
                 var abtb = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Notiz;
                 AbtTextBoxAbtBeschr.Text = abtb;
+                var abtf = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Firma;
+                AbtComboBoxAbtFirma.SelectedItem = abtf;
 
-                //Ausgabe zum Test ob die richtige Abteiluns-ID ankommt
+                //Ausgabe zum Test ob die richtige Abteilungs-ID ankommt
                 Console.WriteLine(@"======================================");
                 Console.WriteLine(@"ID der selektierten Abteilung ist : {0} ", abtid);
                 Console.WriteLine(@"======================================");
 
                 var treffer =
                     from abt in db.Abteilungen
-                    join nutz in db.Nutzer on abt.abteilungID equals nutz.abteilungID 
-                    
+                    join nutz in db.Nutzer on abt.abteilungID equals nutz.abteilungID
+
                     join simn in db.Simnutzung on nutz.nutzerID equals simn.nutzerID
                     join simk in db.Simkarten on simn.simkartenID equals simk.simkartenID
                 
                     where abt.abteilungID == abtid
-                    //&& simn.simrueckgabe < heute
+                    && simn.simrueckgabe == null
                 
                     select new TempTabelle
                     {
-                        ID = abt.abteilungID,
+                        Id = abt.abteilungID,
                         Abteilung = abt.abteilung,
-                        //Vertragsnr = simn.Simkarten.Telefonnummern.Vertraege.vertragsnr,
+                        Firma = abt.Firmen.firmaname1,
+                        Vertragsnr = simn.Simkarten.Telefonnummern.Vertraege.vertragsnr,
                         Telnr = simn.Simkarten.Telefonnummern.telnr,
                         Simkarte = simk.simkartennr,
                         Vorname = nutz.vorname,
                         Nachname =nutz.nachname,
-                        //Fahrzeug = simn.Fahrzeuge.fahrzeugkennzeichen,
-                        //Geraet = simn.Geraete.geraetenr,
+                        Fahrzeug = simn.Fahrzeuge.fahrzeugkennzeichen,
+                        Geraet = simn.Geraete.geraetenr,
                         Notiz = abt.abteilungbeschr
                     };
                 foreach (var info in treffer)
                 {
-                    Console.WriteLine(@"{0} | {1} | {2} | {3} | {4} | {5} | {6} | {7}", 
-                        info.ID, info.Abteilung, info.Vertragsnr, info.Telnr, info.Simkarte, info.Vorname, info.Nachname, info.Fahrzeug, info.Geraet, info.Notiz);
+                    Console.WriteLine(@"{0} | {1} | {2} | {3} | {4} | {5} | {6} | {7} | {8} | {9} | {10}", 
+                        info.Id, info.Abteilung, info.Firma, info.Vertragsnr, info.Telnr, info.Simkarte, info.Vorname, info.Nachname, info.Fahrzeug, info.Geraet, info.Notiz);
                 }
 
                 AbtDataGridAbtVertrTel.ItemsSource = treffer.ToList();
