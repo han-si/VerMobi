@@ -16,6 +16,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -58,7 +59,7 @@ namespace VerMobi.view
 
         private void AbtButtonFormAbtZuruecksetzen_Click(object sender, RoutedEventArgs e)
         {
-            AbtLabelAbtIdText.Content = string.Empty;
+            AbtLabelAbtIdText.Content = null;
             AbtTextBoxAbtBeschr.Clear();
             AbtTextBoxAbtName.Clear();
             AbtTextBoxAbtSuche.Clear();
@@ -142,6 +143,87 @@ namespace VerMobi.view
 
                 AbtDataGridAbtVertrTel.ItemsSource = treffer.ToList();
 
+            }
+        }
+
+        private void AbtButtonAbtNeuAnlegen_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new VerMobiEntities())
+            {
+                if (AbtLabelAbtIdText.Content != null)
+                {
+                    MessageBox.Show(
+                        "Damit eine neue Abteilung angelegt werden kann, darf keine Abteilungs-ID angegeben werden. " +
+                        "Bitte einmal die 'Textfelder leeren'.", "Info",
+                        MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+                    AbtButtonFormAbtZuruecksetzen.Focus();
+                    return;
+                }
+
+                if (AbtTextBoxAbtName.Text == "")
+                {
+                    MessageBox.Show(
+                        "Das Feld 'Abteilung' darf nicht leer sein. " +
+                        "\r\n Bitte eine Bezeichnung für die Abteilung angeben.", "Info",
+                        MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+                    AbtTextBoxAbtName.Focus(); 
+                    return;
+                }
+
+                if (AbtTextBoxAbtName.Text != "")
+                {
+                    var abtn = AbtTextBoxAbtName.Text;
+                    var abtf = AbtComboBoxAbtFirma.Text;
+                    var abtb = AbtTextBoxAbtBeschr.Text;
+
+                    if (AbtComboBoxAbtFirma.Text == "")
+                    {
+                        MessageBox.Show(
+                            "Bitte die zugehörige Firma auswählen. " +
+                            "\r\n \r\n Wenn diese noch nicht auswählbar ist, dann legen Sie die Firme bitte zuerst im" +
+                            " entsprechenden Formular neu an.", "Info",
+                            MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+                        AbtComboBoxAbtFirma.Focus();
+                        return;
+                    }
+
+                    var treffer = from abt in db.Abteilungen
+                        where abt.abteilung == abtn
+                        select new TempTabelle
+                        {
+                            Firma = abt.Firmen.firmaname1
+                        };
+                    var firstOrDefault = treffer.FirstOrDefault();
+                    if (firstOrDefault != null)
+                    {
+                        if (abtf == firstOrDefault.Firma)
+                        {
+                            MessageBox.Show(string.Format(
+                                "Die Datenbank enthält schon eine Abteilung '{0}' in der Firma '{1}'. Bitte wählen Sie eine andere Firma aus. " +
+                                "\r\n \r\n Wenn Sie stattdessen eine bestehende Abteilung bearbeiten möchten, dann bitte die Abteilung zuerst " +
+                                "suchen und in der oberen Tabelle auswählen.", abtn, abtf), "Info",
+                                MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+
+                            AbtComboBoxAbtFirma.Focus();
+                            return;
+                        }
+                    }
+
+                    //ID der ausgewählten Firma ermitteln
+                    var f = from firm in db.Firmen
+                        where firm.firmaname1 == abtf
+                        select new TempTabelle
+                        {
+                            Id = firm.firmaID
+                        };
+                    var first = f.FirstOrDefault();
+                    if (first != null)
+                    {
+                        var firmid = first.Id;
+                        //Abteilungen newAbteilungen = model.Abteilungen.CreateAbteilungen(abtn, firmid, abtb);
+                        Console.WriteLine(@"{0} | {1} | {2} ", abtn, firmid, abtb);
+                    }
+                }
             }
         }
     }
