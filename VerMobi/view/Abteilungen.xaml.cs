@@ -57,6 +57,15 @@ namespace VerMobi.view
             }
         }
 
+        private void AbtNameLeer()
+        {
+            MessageBox.Show(
+                "Das Feld 'Abteilung' darf nicht leer sein." +
+                "\r\n \r\nBitte eine Bezeichnung oder Namen für die Abteilung angeben.", "Info",
+                MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+            AbtTextBoxAbtName.Focus();
+        }
+
         private void AbtButtonFormAbtZuruecksetzen_Click(object sender, RoutedEventArgs e)
         {
             AbtLabelAbtIdText.Content = null;
@@ -64,15 +73,18 @@ namespace VerMobi.view
             AbtTextBoxAbtName.Clear();
             AbtTextBoxAbtSuche.Clear();
             AbtComboBoxAbtFirma.SelectedIndex = -1;
+            AbtLabelAbtGesp.Content = null;
         }
 
         private void AbtButtonAbtSuchen_Click(object sender, RoutedEventArgs e)
         {
+            AbtLabelAbtGesp.Content = null;
             using (var db = new VerMobiEntities())
             {
                 var treffer = 
                     from abt in db.Abteilungen
                     where abt.abteilung.StartsWith(AbtTextBoxAbtSuche.Text)
+                    orderby abt.abteilung
                     select new TempTabelle
                     {
                         Id = abt.abteilungID,
@@ -84,14 +96,13 @@ namespace VerMobi.view
                 {
                     Console.WriteLine(@"{0} | {1} | {2} | {3}", info.Id, info.Abteilung, info.Firma, info.Notiz);
                 }
-
                 AbtDataGridAbtListe.ItemsSource = treffer.ToList();
-
             }
         }
 
         private void AbtDataGridAbtListe_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            AbtLabelAbtGesp.Content = null;
             var selectRow = AbtDataGridAbtListe.SelectedItem;
             if (selectRow == null) return;
 
@@ -140,21 +151,21 @@ namespace VerMobi.view
                     Console.WriteLine(@"{0} | {1} | {2} | {3} | {4} | {5} | {6} | {7} | {8} | {9} | {10}", 
                         info.Id, info.Abteilung, info.Firma, info.Vertragsnr, info.Telnr, info.Simkarte, info.Vorname, info.Nachname, info.Fahrzeug, info.Geraet, info.Notiz);
                 }
-
                 AbtDataGridAbtVertrTel.ItemsSource = treffer.ToList();
-
             }
         }
 
         private void AbtButtonAbtNeuAnlegen_Click(object sender, RoutedEventArgs e)
         {
+            AbtLabelAbtGesp.Content = null;
             using (var db = new VerMobiEntities())
             {
+                //prüfen ob schon eine Abteilungs-ID angezeigt wird, 
+                //um zu verhindern das unbeabsichtigt eine schon bestehende Abt. geändert wird
                 if (AbtLabelAbtIdText.Content != null)
                 {
                     MessageBox.Show(
-                        "Damit eine neue Abteilung angelegt werden kann, darf keine Abteilungs-ID angegeben werden. " +
-                        "Bitte einmal die 'Textfelder leeren'.", "Info",
+                        "Damit eine neue Abteilung angelegt werden kann, bitte vorher einmal die 'Textfelder leeren'.", "Info",
                         MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
                     AbtButtonFormAbtZuruecksetzen.Focus();
                     return;
@@ -162,11 +173,7 @@ namespace VerMobi.view
 
                 if (AbtTextBoxAbtName.Text == "")
                 {
-                    MessageBox.Show(
-                        "Das Feld 'Abteilung' darf nicht leer sein. " +
-                        "\r\n Bitte eine Bezeichnung für die Abteilung angeben.", "Info",
-                        MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
-                    AbtTextBoxAbtName.Focus(); 
+                    AbtNameLeer(); 
                     return;
                 }
 
@@ -179,8 +186,8 @@ namespace VerMobi.view
                     if (AbtComboBoxAbtFirma.Text == "")
                     {
                         MessageBox.Show(
-                            "Bitte die zugehörige Firma auswählen. " +
-                            "\r\n \r\n Wenn diese noch nicht auswählbar ist, dann legen Sie die Firme bitte zuerst im" +
+                            "Bitte die zugehörige Firma auswählen." +
+                            "\r\n \r\nWenn diese noch nicht auswählbar ist, dann legen Sie die Firme bitte zuerst im" +
                             " entsprechenden Formular neu an.", "Info",
                             MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
                         AbtComboBoxAbtFirma.Focus();
@@ -193,20 +200,28 @@ namespace VerMobi.view
                         {
                             Firma = abt.Firmen.firmaname1
                         };
-                    var firstOrDefault = treffer.FirstOrDefault();
-                    if (firstOrDefault != null)
-                    {
-                        if (abtf == firstOrDefault.Firma)
-                        {
-                            MessageBox.Show(string.Format(
-                                "Die Datenbank enthält schon eine Abteilung '{0}' in der Firma '{1}'. Bitte wählen Sie eine andere Firma aus. " +
-                                "\r\n \r\n Wenn Sie stattdessen eine bestehende Abteilung bearbeiten möchten, dann bitte die Abteilung zuerst " +
-                                "suchen und in der oberen Tabelle auswählen.", abtn, abtf), "Info",
-                                MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
 
-                            AbtComboBoxAbtFirma.Focus();
-                            return;
+                    var stringListe = new List<string>();
+                    foreach (var info in treffer)
+                    {
+                        stringListe.Add(info.Firma);
+                    }
+
+                    if (stringListe.Contains(abtf))
+                    {
+                        foreach (var el in stringListe)
+                        {
+                            Console.WriteLine(el);
                         }
+
+                        MessageBox.Show(string.Format(
+                            "Die Datenbank enthält schon eine Abteilung '{0}' in der Firma '{1}'. Bitte  wählen Sie eine andere Firma aus. " +
+                            "\r\n \r\n Wenn Sie stattdessen eine bestehende Abteilung bearbeiten möchten, dann bitte die Abteilung zuerst " +
+                            "suchen und in der oberen Tabelle auswählen.", abtn, abtf), "Info",
+                            MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+
+                        AbtComboBoxAbtFirma.Focus();
+                        return;
                     }
 
                     //ID der ausgewählten Firma ermitteln
@@ -220,8 +235,93 @@ namespace VerMobi.view
                     if (first != null)
                     {
                         var firmid = first.Id;
-                        //Abteilungen newAbteilungen = model.Abteilungen.CreateAbteilungen(abtn, firmid, abtb);
-                        Console.WriteLine(@"{0} | {1} | {2} ", abtn, firmid, abtb);
+                        
+                        //eine neue Abteilung erstellen und an die DB übergeben
+                        VerMobi.Abteilungen abteilungen = new VerMobi.Abteilungen
+                        {
+                            abteilung = abtn,
+                            firmaID = firmid,
+                            abteilungbeschr = abtb
+                        };
+                        db.Abteilungen.Add(abteilungen);
+                        db.SaveChanges();
+                        AbtTextBoxAbtName.Focus();
+
+                        //ermitteln und ausgeben mit welcher ID die letzte Abteilung gespeichert wurde
+                        //damit der Benutzer eine Rückmeldung hat ob das Speichern erfolgreich war
+                        var ida = from abt in db.Abteilungen 
+                                      where abt.abteilung == abtn
+                                      select new TempTabelle
+                                      {
+                                          Id = abt.abteilungID
+                                      };
+                        var abtid = (ida.ToList()).Last();
+
+                        AbtLabelAbtGesp.Content = "INFO: Es wurde eine neue Abteilung  '" + abtn + "'  mit der ID  '" +abtid.Id+"'  angelegt.";
+                        Console.WriteLine(@"{0} | {1} | {2} ", abtn, abtid.Id, abtb);
+                    }
+                }
+            }
+        }
+
+        private void AbtButtonAbtAendernSpeich_Click(object sender, RoutedEventArgs e)
+        {
+            AbtLabelAbtGesp.Content = null;
+            using (var db = new VerMobiEntities())
+            {
+                //prüfen ob und welche Abteilungs-ID angezeigt wird um zu verhindern das eine neue Abteilung angelegt wird
+                if (AbtLabelAbtIdText.Content == null)
+                {
+                    MessageBox.Show(
+                        "Damit eine bestehenden Abteilung geändert werden kann, bitte zuerst die entsprechende Abteilung " +
+                        "in der oberen Liste auswählen und dann die gewünschten Änderungen vornehmen.", "Info",
+                        MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK);
+                    AbtTextBoxAbtSuche.Focus();
+                    return;
+                }
+
+                if (AbtTextBoxAbtName.Text == "")
+                {
+                    AbtNameLeer();
+                    return;
+                }
+
+                if (AbtTextBoxAbtName.Text != "")
+                {
+                    var abtid = (int) AbtLabelAbtIdText.Content;
+                    var abtn = AbtTextBoxAbtName.Text;
+                    var abtf = AbtComboBoxAbtFirma.Text;
+                    var abtb = AbtTextBoxAbtBeschr.Text;
+
+                    //ID der ausgewählten Firma ermitteln
+                    var f = from firm in db.Firmen
+                        where firm.firmaname1 == abtf
+                        select new TempTabelle
+                        {
+                            Id = firm.firmaID
+                        };
+                    var first = f.FirstOrDefault();
+                    if (first != null)
+                    {
+                        var firmid = first.Id;
+
+                        //die zu ändernde Abteilung aus der DB abrufen, ändern und wieder an die DB übergeben
+                        var treffer = from abt in db.Abteilungen
+                            where abt.abteilungID == abtid
+                            select abt;
+
+                        foreach (var abt in treffer)
+                        {
+                            abt.abteilung = abtn;
+                            abt.firmaID = firmid;
+                            abt.abteilungbeschr = abtb;
+                        }
+                        db.SaveChanges();
+
+                        Console.WriteLine(@"{0} | {1} | {2} | {3} ", abtid, abtn, abtf, abtb);
+                        AbtLabelAbtGesp.Content = "INFO: Die Abteilung  '" + abtn + "'  mit der ID  '" + abtid +
+                                                  "'  wurde geändert.";
+                        AbtTextBoxAbtSuche.Focus();
                     }
                 }
             }

@@ -4,11 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:view="clr-namespace:VerMobi.view" 
+        xmlns:model="clr-namespace:VerMobi.model" 
         x:Class="VerMobi.view.MainWindow"
         mc:Ignorable="d"
         Title="Vertragsverwaltung" Height="700" Width="925" Icon="../images/icon.ico">
     <Grid>
-        <TabControl x:Name="TabControl" Height="Auto" Margin="10,10,10,10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="22"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="TabControl" Height="Auto" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto">
             <TabItem Header="Übersicht">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto">
                     <Grid Background="#FFE5E5E5">
@@ -162,5 +167,8 @@
                 </ScrollViewer>
             </TabItem>-->
         </TabControl>
+        <StatusBar x:Name="Statusleiste" Grid.Row="1" Margin="2,0,2,1" >
+            <Label x:Name="StLabel" Content="" HorizontalAlignment="Left" Padding="2,0,0,0" VerticalAlignment="Top" Height="16"/>
+        </StatusBar>
     </Grid>
 </Window>
