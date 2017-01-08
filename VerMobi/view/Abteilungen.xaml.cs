@@ -68,22 +68,29 @@ namespace VerMobi.view
 
         private void AbtButtonFormAbtZuruecksetzen_Click(object sender, RoutedEventArgs e)
         {
-            AbtLabelAbtIdText.Content = null;
-            AbtTextBoxAbtBeschr.Clear();
-            AbtTextBoxAbtName.Clear();
             AbtTextBoxAbtSuche.Clear();
+            AbtLabelAbtSucheKeinErgebnis.Content = null;
+            AbtLabelAbtIdText.Content = null;
+            AbtTextBoxAbtName.Clear();
             AbtComboBoxAbtFirma.SelectedIndex = -1;
+            AbtTextBoxAbtBeschr.Clear();
             AbtLabelAbtGesp.Content = null;
         }
 
         private void AbtButtonAbtSuchen_Click(object sender, RoutedEventArgs e)
         {
+            AbtSuchen();
+        }
+
+        private void AbtSuchen()
+        {
+            AbtLabelAbtSucheKeinErgebnis.Content = null;
             AbtLabelAbtGesp.Content = null;
             using (var db = new VerMobiEntities())
             {
-                var treffer = 
+                var treffer =
                     from abt in db.Abteilungen
-                    where abt.abteilung.StartsWith(AbtTextBoxAbtSuche.Text)
+                    where abt.abteilung.Contains(AbtTextBoxAbtSuche.Text)
                     orderby abt.abteilung
                     select new TempTabelle
                     {
@@ -92,11 +99,18 @@ namespace VerMobi.view
                         Firma = abt.Firmen.firmaname1,
                         Notiz = abt.abteilungbeschr
                     };
+
+                if (!treffer.Any())
+                {
+                    AbtLabelAbtSucheKeinErgebnis.Content = "Kein Treffer! Alternativ können Sie das Feld leer lassen um alle Abt. anzuzeigen.";
+                }
+
                 foreach (var info in treffer)
                 {
                     Console.WriteLine(@"{0} | {1} | {2} | {3}", info.Id, info.Abteilung, info.Firma, info.Notiz);
                 }
                 AbtDataGridAbtListe.ItemsSource = treffer.ToList();
+                AbtTextBoxAbtSuche.Focus();
             }
         }
 
@@ -116,11 +130,6 @@ namespace VerMobi.view
                 AbtTextBoxAbtBeschr.Text = abtb;
                 var abtf = ((VerMobi.model.TempTabelle)(AbtDataGridAbtListe.SelectedItem)).Firma;
                 AbtComboBoxAbtFirma.SelectedItem = abtf;
-
-                //Ausgabe zum Test ob die richtige Abteilungs-ID ankommt
-                Console.WriteLine(@"======================================");
-                Console.WriteLine(@"ID der selektierten Abteilung ist : {0} ", abtid);
-                Console.WriteLine(@"======================================");
 
                 var treffer =
                     from abt in db.Abteilungen
@@ -245,7 +254,6 @@ namespace VerMobi.view
                         };
                         db.Abteilungen.Add(abteilungen);
                         db.SaveChanges();
-                        AbtTextBoxAbtName.Focus();
 
                         //ermitteln und ausgeben mit welcher ID die letzte Abteilung gespeichert wurde
                         //damit der Benutzer eine Rückmeldung hat ob das Speichern erfolgreich war
@@ -257,8 +265,10 @@ namespace VerMobi.view
                                       };
                         var abtid = (ida.ToList()).Last();
 
-                        AbtLabelAbtGesp.Content = "INFO: Es wurde eine neue Abteilung  '" + abtn + "'  mit der ID  '" +abtid.Id+"'  angelegt.";
+                        AbtSuchen(); //damit sich das obere DataGrid aktualisiert
+                        AbtLabelAbtGesp.Content = "INFO:  Es wurde eine neue Abteilung  '" + abtn + "'  mit der ID  '" + abtid.Id + "'  angelegt.";
                         Console.WriteLine(@"{0} | {1} | {2} ", abtn, abtid.Id, abtb);
+                        AbtTextBoxAbtName.Focus();
                     }
                 }
             }
@@ -318,10 +328,9 @@ namespace VerMobi.view
                         }
                         db.SaveChanges();
 
+                        AbtSuchen(); //damit sich das obere DataGrid aktualisiert
                         Console.WriteLine(@"{0} | {1} | {2} | {3} ", abtid, abtn, abtf, abtb);
-                        AbtLabelAbtGesp.Content = "INFO: Die Abteilung  '" + abtn + "'  mit der ID  '" + abtid +
-                                                  "'  wurde geändert.";
-                        AbtTextBoxAbtSuche.Focus();
+                        AbtLabelAbtGesp.Content = "INFO:  Die Abteilung  '" + abtn + "'  mit der ID  '" + abtid + "'  wurde geändert.";
                     }
                 }
             }

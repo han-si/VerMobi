@@ -32,12 +32,13 @@
                 </LinearGradientBrush>
             </Border.BorderBrush>
         </Border>
-        <Label x:Name="AbtLabelAbtSuche" Content="Abteilung:" HorizontalAlignment="Left" Margin="0,2" VerticalAlignment="Center" Height="26" Width="85" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Right"/>
-        <TextBox x:Name="AbtTextBoxAbtSuche" ToolTip="Bitte eine vorhandene Abteilung eingeben oder leer lassen um alle bisher gespeicherten Abteilungen anzeigen zu lassen." HorizontalAlignment="Left" Height="22" Margin="95,4,0,4" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" MaxLength="50"/>
-        <Button x:Name="AbtButtonAbtSuchen" Content="Abteilung suchen" ToolTip="Abteilung suchen" HorizontalAlignment="Left" Margin="305,5,5,5" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Padding="5,1" Click="AbtButtonAbtSuchen_Click"/>
+        <Label x:Name="AbtLabelAbtSuche" Content="Abt.-Name:" HorizontalAlignment="Left" Margin="2,2,10,2" VerticalAlignment="Center" Height="26" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="AbtTextBoxAbtSuche" ToolTip="Bitte Teile des Namens einer vorhandenen Abteilung eingeben oder leer lassen um alle bisher gespeicherten Abteilungen anzeigen zu lassen." HorizontalAlignment="Left" Height="22" Margin="80,4,15,4" TextWrapping="NoWrap" VerticalAlignment="Center" Width="130" Grid.Row="1" Grid.Column="1" Text="" VerticalContentAlignment="Center" MaxLength="50"/>
+        <Button x:Name="AbtButtonAbtSuchen" Content="Abteilung suchen" ToolTip="Abteilung suchen" HorizontalAlignment="Left" Margin="225,5,10,5" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Padding="5,1" Click="AbtButtonAbtSuchen_Click"/>
+        <Label x:Name="AbtLabelAbtSucheKeinErgebnis" Content="" HorizontalAlignment="Left" Margin="340,2,0,2" VerticalAlignment="Center" Height="26" Width="Auto" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontStyle="Italic"/>
         <DataGrid x:Name="AbtDataGridAbtListe" HorizontalAlignment="Left" Margin="0,5,0,10" Grid.Row="2" VerticalAlignment="Top" AutoGenerateColumns="False" MaxHeight="110" Width="Auto" CanUserAddRows="False" CanUserDeleteRows="False" SelectionChanged="AbtDataGridAbtListe_SelectionChanged" Grid.Column="1" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Abteilung" Binding="{Binding Abteilung}"/>
+                <DataGridTextColumn Header="Abt.-Name" Binding="{Binding Abteilung}"/>
                 <DataGridTextColumn Header="Firma" Binding="{Binding Firma}"/>
                 <DataGridTextColumn Header="Beschreibung" Binding="{Binding Notiz}"/>
             </DataGrid.Columns>
@@ -76,10 +77,10 @@
                 <ColumnDefinition Width="220"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="AbtLabelAbtAender" Content="Abteilung neu anlegen oder ändern:" HorizontalAlignment="Left" Height="26" Grid.ColumnSpan="2" />
+            <Label x:Name="AbtLabelAbtAender" Content="Abteilung neu anlegen oder ändern:" HorizontalAlignment="Left" Height="26" Grid.ColumnSpan="2" FontWeight="Bold" />
             <Label x:Name="AbtLabelAbtIdLabel" Content="Abteilungs-ID:" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" Height="26" Width="85" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Right"/>
             <Label x:Name="AbtLabelAbtIdText" Content="{Binding Abteilungsid}" ToolTip="Wird von der Datenbank vergeben und verwaltet." HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1" BorderThickness="0.5" BorderBrush="Gray" Padding="5,0,0,0" VerticalContentAlignment="Center"/>
-            <Label x:Name="AbtLabelAbt" Content="Abteilung: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="85" Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Right"/>
+            <Label x:Name="AbtLabelAbt" Content="Abt.-Name: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="85" Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Right"/>
             <TextBox x:Name="AbtTextBoxAbtName" Text="{Binding Abteilungtext}" ToolTip="Name/Bezeichnung der Abteilung (Pflichtfeld)" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="NoWrap" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" MaxLength="50" />
             <Label x:Name="AbtLabelAbtFirma" Content="Firma: *" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Height="26" Width="85" Grid.Column="0" Grid.Row="3" HorizontalContentAlignment="Right"/>
             <ComboBox x:Name="AbtComboBoxAbtFirma" IsEditable="True" IsReadOnly="True" ToolTip="Bitte zugehörige Firma auswählen. Wenn noch nicht vorhanden, dann bitte im entsprechenden Formular neu anlegen (Pflichtfeld)." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="3"/>
